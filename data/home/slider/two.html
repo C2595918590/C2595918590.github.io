@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>切换axios</title>
+		<!-- <script src="https://unpkg.com/vue@next"></script> -->
+		<script src="js/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" ></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrapcss.css"/>
+		<style>
+		#app{
+			width: 360px;
+			height: 630px;
+			margin-top: 35px;
+			display: grid;
+			grid-template: repeat(3,33%)/repeat(3,33%);
+		}
+		#app>div{
+			transition: 1s ease-in-out;
+		}
+		#app img,button{
+			margin: 10px;
+			width: 90%;
+			height: 90%;
+			border-radius: 5%;
+		    }
+		body{
+			display: flex;
+			justify-content:space-evenly;
+		}
+		#one{
+			width:50%
+		}
+		</style>
+	</head>
+	<body class='bg-warning'>
+		<div id="app">
+			<div class="carousel-item active" >
+			    <img alt="" src="img/F-one.jpg" class="d-block" v-if="counter===1">
+			    <img alt="" src="img/F-two.jpg" class="d-block" v-else-if="counter===2">
+			    <img alt="" src="img/F-three.jpg" class="d-block" v-else-if="counter===3">
+			    <img alt="" src="img/F-four.jpg" class="d-block" v-else>
+			</div>
+			<div class="carousel-item active" >
+			    <img alt="" src="img/F-one.jpg" class="d-block" v-if="counter===1">
+			    <img alt="" src="img/F-two.jpg" class="d-block" v-else-if="counter===2">
+			    <img alt="" src="img/F-three.jpg" class="d-block" v-else-if="counter===3">
+			    <img alt="" src="img/F-four.jpg" class="d-block" v-else>
+			</div><div class="carousel-item active" >
+			    <img alt="" src="img/F-one.jpg" class="d-block" v-if="counter===1">
+			    <img alt="" src="img/F-two.jpg" class="d-block" v-else-if="counter===2">
+			    <img alt="" src="img/F-three.jpg" class="d-block" v-else-if="counter===3">
+			    <img alt="" src="img/F-four.jpg" class="d-block" v-else>
+			</div><div class="carousel-item active" >
+			    <img alt="" src="img/F-one.jpg" class="d-block" v-if="counter===1">
+			    <img alt="" src="img/F-two.jpg" class="d-block" v-else-if="counter===2">
+			    <img alt="" src="img/F-three.jpg" class="d-block" v-else-if="counter===3">
+			    <img alt="" src="img/F-four.jpg" class="d-block" v-else>
+			</div>
+			<div>
+				<button class="btn btn-primary mb-auto" @click="counter = counter<3 ? counter+=1:0;">切换</button>
+			</div>
+			<div class="carousel-item active" >
+			    <img alt="" src="img/F-one.jpg" class="d-block" v-if="counter===1">
+			    <img alt="" src="img/F-two.jpg" class="d-block" v-else-if="counter===2">
+			    <img alt="" src="img/F-three.jpg" class="d-block" v-else-if="counter===3">
+			    <img alt="" src="img/F-four.jpg" class="d-block" v-else>
+			</div><div class="carousel-item active" >
+			    <img alt="" src="img/F-one.jpg" class="d-block" v-if="counter===1">
+			    <img alt="" src="img/F-two.jpg" class="d-block" v-else-if="counter===2">
+			    <img alt="" src="img/F-three.jpg" class="d-block" v-else-if="counter===3">
+			    <img alt="" src="img/F-four.jpg" class="d-block" v-else>
+			</div><div class="carousel-item active" >
+			    <img alt="" src="img/F-one.jpg" class="d-block" v-if="counter===1">
+			    <img alt="" src="img/F-two.jpg" class="d-block" v-else-if="counter===2">
+			    <img alt="" src="img/F-three.jpg" class="d-block" v-else-if="counter===3">
+			    <img alt="" src="img/F-four.jpg" class="d-block" v-else>
+			</div><div class="carousel-item active" >
+			    <img alt="" src="img/F-one.jpg" class="d-block" v-if="counter===1">
+			    <img alt="" src="img/F-two.jpg" class="d-block" v-else-if="counter===2">
+			    <img alt="" src="img/F-three.jpg" class="d-block" v-else-if="counter===3">
+			    <img alt="" src="img/F-four.jpg" class="d-block" v-else>
+			</div>
+
+		</div  >
+		<div id="one">
+			<h1>watch检测</h1><hr>
+			<form>
+				<div class="form-group col-12">
+					<label for="userName" >用户名</label>
+					<input type="text" class="form-control" id="userName" placeholder="用户名" v-model.lazy="userName">
+					<div class="alert alert-info" v-show="userNameAlert" role="alert">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+							<path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+						</svg>用户名已存在！！！
+					</div>
+				</div>
+				<div class="form-group col-12">
+					<label for="userPhone" >电话</label>
+					<input type="text" class="form-control" id="userPhone" placeholder="电话" v-model.lazy="userPhone">
+					<div class="alert alert-info col-12" v-show="userPhoneAlert" role="alert">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+							<path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+						</svg>请检查长度！！！
+					</div>
+				</div>
+				<div class="form-group col-12">
+					<label for="exampleInputEmail1" >邮箱</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" v-model.lazy="email">
+				</div>
+				<div class="form-group col-lg-12">
+					<label for="exampleInputPassword1">密码</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" v-model.lazy="password">
+				</div>
+			</form>
+			<div class="alert alert-danger" role="alert">
+				{{userName}}
+			</div>
+			<div class="alert alert-primary" role="alert">
+				{{userPhone}}
+			</div>
+			<div class="alert alert-success" role="alert">
+				{{email}}
+			</div>
+
+
+
+		</div>
+		<script type="module">
+			const App = {
+				data() {
+					return {
+						counter: 1
+					}
+				},
+			};
+			Vue.createApp(App).mount('#app');
+			const One ={
+				data(){
+					return{
+						userName:null,
+						userPhone:null,
+						userNameAlert:false,
+						userPhoneAlert:false,
+						email:'',
+
+					}
+				},
+				watch:{
+					userName(){
+						axios.get('https://jsonplaceholder.typicode.com/users',{
+							params:{
+								username:this.userName
+							}
+						}).then(
+								ess=> {
+									this.userNameAlert = ess.data.length > 0;
+								}).catch(
+								err=>{
+									console.log(err)
+								}
+						)
+					},
+					userPhone() {
+						this.userPhoneAlert = this.userPhone.length === 9;
+
+					}
+
+				}
+			};
+			Vue.createApp(One).mount('#one');
+		</script>
+	</body>
+</html>

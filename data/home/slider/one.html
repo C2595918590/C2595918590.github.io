@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>滑块-变色</title>
+		<script src="js/vue.3.1.4.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrapcss.css"/>
+		<style>
+			#arer{
+				margin: 20px;
+				transition: 5s ease-in-out;
+			}
+			.flex{
+				display: flex;
+				justify-content: space-around;
+			}
+
+		</style>
+	</head>
+	<body class="bg-warning">
+		<div id='app'>
+			<div style="height: 550px;" class="flex align-content-center align-items-center">
+				<div :class="colors" id="arer" :style="wh" ></div>
+			</div>
+			<hr>
+			<div class=" flex">
+				<div class="col-md-4 flex-column flex">
+					<label for="customRange1">拖动调整大小(当前：{{range}}px)</label>
+					<input type="range" class="custom-range col-6" id="customRange1" min="50" max="400" v-model="range">
+				</div>
+				<div class="col-md-4 flex-column flex">
+					<label for="customRange2">旋转角度(当前：{{degs}}deg)</label>
+					<input type="range" class="custom-range col-6" id="customRange2" min="0" max="3600" v-model="degs">
+				</div>
+				<div class="col-md-4">
+					<label for="validationDefault04">请选择颜色</label>
+					<select class="custom-select" id="validationDefault04" required v-model="colors">
+						<option selected  value="bg-white">白色</option>
+						<option value="bg-danger">红色</option>
+						<option value="bg-primary">蓝色</option>
+						<option value="bg-secondary">灰色</option>
+						<option value="bg-success">绿色</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<script >
+			const App = {
+				data() {
+					return{
+						range:96,
+						colors:'bg-white',
+						degs:0,
+
+						}
+				},
+				computed:{
+					wh(){
+						return{
+							width: this.range+'px',height: this.range+'px',
+							transform: 'rotate('+this.degs+'deg)'
+						}
+
+					},
+					deg(){
+						return{
+
+						}
+
+					},
+					}
+			};
+			Vue.createApp(App).mount('#app');
+		</script>
+	</body>
+</html>

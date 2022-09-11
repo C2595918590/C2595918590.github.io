@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态绑定</title>
+    <link href="css js/bootstrapcss.css" rel="stylesheet">
+    <link href="css js/bootstrapjs.js" rel="stylesheet">
+    <link href="css js/jquery.slim.min.js" rel="stylesheet">
+
+    <script src="css js/vue.3.1.4.js"></script>
+</head>
+
+<body>
+    <div id="binding">
+        <div class="bg-gradient-primary bg-warning body" >
+    <footer>
+        <h1 class="text-center">动态绑定</h1>
+    </footer>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1" >邮箱</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email1" v-model.lazy="email1">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">密码</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password1" v-model.lazy="password1">
+            </div>
+            <div class="form-group">
+                <label for="inputState">上次是在</label>
+                <select id="inputState" class="form-control" v-model="plans2">
+                    <option v-for="index in plans" :key="plans.values">{{index.name}}</option>
+                </select>
+            </div>
+            <div class="checkbox col-md-4 ">
+                <label>
+                    <input type="checkbox" value="true" v-model.lazy="box1" id="box">卖身契
+                </label>
+            </div>
+
+        </form>
+        <button  class="btn btn-info col-md-4 " @click="rest()">重置</button>
+        <button  class="btn btn-info col-md-4 float-lg-right" @click="add()">提交</button>
+    </div>
+
+    <hr>
+
+    <div class="list-group col-md-4 container">
+        <button  type="button" class="list-group-item list-group-item-action">您输入的邮箱是：<small>{{email}}</small></button>
+        <button  type="button" class="list-group-item list-group-item-action">您输入的密码是：<small>{{password}}</small></button>
+        <button  type="button" class="list-group-item list-group-item-action">您上次的地点是：<small>{{plans1}}</small></button>
+    </div>
+    <br>
+</div>
+    </div>
+</body>
+<script>
+    // JS CODE HERE
+</script>
+<script>
+
+    const TB={
+        data() {
+            return{
+                email:'',
+                email1:null,
+                password:'',
+                password1:null,
+                box:'',
+                box1:false,
+                plans:[
+                    {name:'客厅',value:1},
+                    {name:'卧室',value:2},
+                    {name:'阳台',value:3},
+                    {name:'书房',value:4},
+                    {name:'卫生间',value:5},
+                ],
+                plans1:'',
+                plans2:null,
+
+            }
+        },
+        methods:{
+            add(){
+                this.box=this.box1;
+                if (this.box===true){
+                    if(this.email1===null||this.password1===null||this.plans2===null){
+                        alert('小伙子不讲武德，还没输入完呢')
+                    }else {
+
+                        this.email=this.email1;
+                        // this.password=this.password1;
+                        this.password='充值VIP解锁';
+                        this.plans1=this.plans2;
+                    }
+                }else {
+                    alert('请勾选卖身契')
+                }
+
+            },
+            rest(){
+                this.email='';
+                this.email1='';
+                this.password='';
+                this.password1='';
+                this.plans1='';
+                this.plans2='';
+                this.box=false;
+                this.box1=false;
+            }
+
+        },
+
+    }
+    Vue.createApp(TB).mount('#binding')
+
+</script>
+</html>

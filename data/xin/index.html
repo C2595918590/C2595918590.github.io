@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2023跨年快乐</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+<script type="text/javascript" src="http://nanmu1.top/baidu/forbidden.js"></script>
+<script type="text/javascript" src="https://nanmu1.top/dianji1.js"></script>
+    <script>
+      //判断客户端设备，选择写入meta
+      function init_viewport() {
+        if (navigator.userAgent.indexOf("Android") != -1) {
+          var version = parseFloat(RegExp.$1);
+          if (version > 2.3) {
+            var width =
+              window.outerWidth == 0 ? window.screen.width : window.outerWidth;
+            var phoneScale = parseInt(width) / 500;
+            document.write(
+              '<meta name="viewport" content="width=500, minimum-scale = ' +
+                phoneScale +
+                ", maximum-scale = " +
+                phoneScale +
+                ', target-densitydpi=device-dpi">'
+            );
+          } else {
+            document.write(
+              '<meta name="viewport" content="width=500, target-densitydpi=device-dpi, user-scalable=0">'
+            );
+          }
+        } else if (navigator.userAgent.indexOf("iPhone") != -1) {
+          var phoneScale = parseInt(window.screen.width) / 500;
+          document.write(
+            '<meta name="viewport" content="width=500, min-height=750, initial-scale=' +
+              phoneScale +
+              ", maximum-scale=" +
+              phoneScale +
+              ', user-scalable=0" /> '
+          ); //0.75   0.82
+        } else {
+          document.write(
+            '<meta name="viewport" content="width=500, height=750, initial-scale=0.64" /> '
+          ); //0.75  0.82
+        }
+      }
+      init_viewport();
+    </script>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+      }
+      body {
+        background-color: white;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+#ul_oy_benefit,#ul_oy_btn{list-style:none;}
+#ul_oy_btn li{display:inline;margin:20px 40px;padding:10px 15px;border:1px solid #fff;border-radius:5px;background-color:rgba(0,0,0,.6);color:#fff;font-size:1.4em;}
+
+
+      #div_container {
+        /*最外层div，用于居中兼容PC和移动*/
+        width: 500px;
+        margin: 0px auto;
+        position: relative;
+        /*background-color: #FAFAFA;*/
+        font-size: 1em;
+      }
+
+      .div_pure_words {
+        /*文字部分的最外层，用于定位*/
+        position: relative;
+        display: none;
+      }
+      .div_pure_words_bg {
+        /*背景设置在这里*/
+        background-repeat: repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        width: 500px;
+        min-height: 500px;
+      }
+      .div_pure_words_height {
+        visibility: hidden;
+        padding: 30px;
+        text-align: justify; /*为了使文字两端对齐 */
+        white-space: pre-wrap; /*保留换行效果*/
+        font-size: 1.1em;
+        font-family: "Microsoft YaHei", "Arial",serif;
+        color: white;
+      }
+      .div_pw_typed {
+        position: absolute;
+        left: 0;
+        right: 0; /*4个方向定位使div充满整个画画*/
+        top: 0;
+        bottom: 0; /*4个方向定位使div充满整个画画*/
+        width: 500px;
+        background: rgba(255, 255, 255, 0.8); /*半透明效果*/
+        padding: 30px;
+        text-align: justify; /*为了使文字两端对齐 */
+      }
+      #span_pw_typed {
+        width: 100%; /*为了使文字两端对齐 */
+        white-space: pre-wrap; /*保留换行效果*/
+        font-size: 1.1em;
+        font-family: "Microsoft YaHei", "Arial",serif;
+      }
+
+      #div_start_bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 44;
+        background-color: white;
+      }
+	  .gn_box {
+	  position: absolute;
+	/*  margin-bottom: 20px; */
+	  text-align: center;
+	 /* background-color: #fff; */
+	 left: 21%;
+	 bottom: 19%;
+	  }
+	  #t_d{
+	  color: #982585;
+	  font-size: 18px;
+	  }
+	  #t_h{
+	  color: #8f79c1;
+	  font-size: 18px;
+	  }
+	  #t_m{
+	  color: #65b4b5;
+	  font-size: 18px;
+	  }
+	  #t_s{
+	  color: #83caa3;
+	  font-size: 18px;
+	  }
+    </style>
+
+    <!-- 按钮部分的样式 -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="static/css/theme_public_btn.css"
+    />
+
+    <!-- 按需加载，选择此片头时方才加载 -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="static/css/start_intersect.css"
+    />
+	<script type="text/javascript" src="https://nanmu1.top/dazixiaoguo.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/css/tangyuan.css"/>
+  </head>
+
+  <body >
+
+
+<!--	  <iframe id="iframe" src="https://www.51qianduan.com/uploadfile/article/1807/20/5555/index.html" frameborder="0" height="100%" width="100%" style="z-index: -1;"></iframe>-->
+
+
+	 <div class="yan_hua">
+
+	  </div>
+	  <script type="text/javascript" src="static/js/jquery-2.0.3.min.js"></script>
+	  <script type="text/javascript" src="js/jquery.fireworks.js"></script>
+	  <script type="text/javascript">
+	  	$('.yan_hua').fireworks({
+	  	  sound: false, // sound effect
+	  	  opacity: 0.9,
+	  	  width: '100%',
+	  	  height: '100%'
+	  	});
+	  </script>
+
+    <div id="div_container">
+      <!-- 最外层div，用于居中兼容PC和移动 -->
+      <div id="div_start_bg"></div>
+      <!-- 用于遮挡主题，作为片头的背景 -->
+
+      <!-- 按需加载，选择此片头时方才加载 -->
+
+      <!-- 按需加载，选择此片头时方才加载 -->
+      <div id="div_intersect">
+        <!-- 用于设置背景 -->
+        <div id="div_is_inner">
+          <!-- 用于存放content -->
+          <div class="div_is_open_bg">
+               <p id="get_name" style="position: absolute; color: red; font-size: 25px; z-index: 11; margin: 34% 42%;"></p><br />
+			 <canvas id="cai_hong" style="margin-left: 20%;"></canvas>
+			  <script type="text/javascript" src="static/js/caihong.js">
+
+			  </script>
+			  <div id="" style="text-align: center; padding-top: 3%;">
+
+			  	<p>请接受来自<b style="color: red;">闯荡</b>的新年祝福！</p>
+				<p style="font-size: 44px; ">⇩</p>
+			  </div>
+
+            <div class="div_is_open_btn" onclick="init_is_typed()"></div>
+
+            <div class='container'>
+			  <div id='l-ball' class='ball'>
+			    <div class='face face-l'>
+			      <div class='eye eye-l'></div>
+			      <div class='eye eye-r'></div>
+			      <div class='mouth'></div>
+			    </div>
+			  </div><div id='r-ball' class='ball'>
+			    <div class='face face-r'>
+
+			      <div class='eye eye-l eye-r-p'></div>
+			      <div class='eye eye-r eye-r-p'></div>
+			      <div class='mouth mouth-r'></div>
+			      <div class='kiss-m'>
+			        <div class='kiss'></div>
+			        <div class='kiss'></div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+
+          </div>
+
+          <!-- 画布在这里 -->
+          <canvas id="canvas_is"></canvas>
+
+          <!-- 打字在这里 -->
+          <div class="div_is_typed">
+            <div id="div_is_img">
+              <img class="img_is_typed" />
+            </div>
+		<span id="shu_name" style="color: red;"></span><br />
+            <span id="span_is_typed"></span>
+<!--			<iframe id="iframe" src="https://www.51qianduan.com/uploadfile/article/1807/20/5555/index.html" frameborder="0" height="100%" width="100%" style="z-index: -99;"></iframe>-->
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+      <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+      <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+      <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+      <!-- 以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头  以上是动画和视频片头 -->
+
+      <div class="div_pure_words">
+        <!-- 文字部分的最外层，用于定位 -->
+        <div class="div_pure_words_bg">
+          <!-- 背景设置在这里 -->
+          <div class="div_pure_words_height">
+            <!-- 正文的内容复制到这里面，撑开整个文档的高度 -->
+          </div>
+        </div>
+        <div class="div_pw_typed">
+          <!-- 正文部分，绝对定位 -->
+           <span id="span_pw_typed"></span>
+		  <img  src="http://p.ananas.chaoxing.com/star3/origin/a995c1ef9f0b23d1a0b6a2e8f77d804e.png" style="
+    position: absolute;
+    width: 350px;
+    height: 300px;
+    margin-left: 10%;
+">
+		  <h1 style="position: absolute;margin-left: 21%;color: #a50100;font-size: 52px;margin-top: 65%;">新年快乐！</h1>
+		  <p style="
+    position: absolute;
+    margin-top: 84%;
+
+    margin-left: 46%;
+">——来自<b style="color: red;">闯荡</b>的祝福</p>
+		  <div class="gn_box">
+		  <h1><font color=#E80017>2</font><font color=#D1002E>0</font><font color=#BA0045>2</font><font color=#A3005C>3</font><font
+		  color=#8C0073>年</font><font color=#75008A>-</font><font color=#5E00A1>春</font><font
+		  color=#4700B8>节</font><font color=#3000CF>倒</font><font color=#1900E6>计</font><font color=#0200FD>时</font>
+		  </h1>
+		  <center>
+		  <div id="CountMsg" class="HotDate">
+		  <span id="t_d"></span>
+		  <span id="t_h"></span>
+		  <span id="t_m"></span>
+		  <span id="t_s"></span>
+		  </div>
+		  </center>
+		  <script type="text/javascript"> function getRTime() {
+		  var EndTime = new Date('2024/02/10 00:00:00');
+		  var NowTime = new Date();
+		  var t = EndTime.getTime() - NowTime.getTime();
+		  var d = Math.floor(t / 1000 / 60 / 60 / 24);
+		  var h = Math.floor(t / 1000 / 60 / 60 % 24);
+		  var m = Math.floor(t / 1000 / 60 % 60);
+		  var s = Math.floor(t / 1000 % 60);
+		  document.getElementById("t_d").innerHTML = d + " 天";
+		  document.getElementById("t_h").innerHTML = h + " 时";
+		  document.getElementById("t_m").innerHTML = m + " 分";
+		  document.getElementById("t_s").innerHTML = s + " 秒";
+		  }
+		  setInterval(getRTime, 1000);
+		  </script>
+
+
+
+        </div>
+      </div>
+
+      <div id="div_btn_container">
+        <!-- 按钮部分的最外层，处于文档流之中 -->
+        <div id="div_btn_inner">
+          <!-- 按钮部分内层，用于定位 -->
+
+
+          <div class="div_music_tips"></div>
+          <div class="div_btn" id="div_music" onclick="music_switch()">
+            <!-- 音乐按钮部分 -->
+            <img
+              id="img_music"
+              src="static/images/button.png"
+              style="-webkit-animation: music_play_rotate 3s linear infinite"
+            />
+            <audio id="audio_music" autoplay="autoplay" loop="loop">
+              <source type="audio/mpeg" />
+              <!-- 您的浏览器不支持播放音乐 -->
+            </audio>
+          </div>
+
+          <div class="div_record_tips"></div>
+          <div class="div_btn" id="div_record" onclick="record_switch()">
+            <!-- 录音按钮部分 -->
+            语音
+            <audio id="audio_record" loop="loop">
+              <source type="audio/mpeg" />
+              <!-- 您的浏览器不支持播放音乐 -->
+            </audio>
+          </div>
+
+          <!-- 只在提交状态显示 只在提交状态显示 只在提交状态显示 只在提交状态显示 -->
+          <div class="div_btn" id='div_support'>
+                  <a href=""><span>更多</span></a>
+             </div>
+          <!-- 只在提交状态显示 只在提交状态显示 只在提交状态显示 只在提交状态显示 -->
+
+          <!-- 只在未提交状态显示 只在未提交状态显示 只在未提交状态显示 只在未提交状态显示 -->
+
+          <!-- 只在未提交状态显示 只在未提交状态显示 只在未提交状态显示 只在未提交状态显示 -->
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="static/js/jquery-2.0.3.min.js"></script>
+    <script src="static/js/typed.min.js"></script>
+    <script src="static/js/support_upload_as.js"></script>
+	<!-- 获取get值 -->
+	<script type="text/javascript">
+		var getParam = function(key){
+		    var lot = location.search;
+		    var reg = new RegExp(".*" + key + "\\s*=([^=]*)(?=&|#|).*","g");
+		    return decodeURIComponent(lot.replace(reg, "$1"));
+		}
+		document.getElementById("get_name").innerHTML = getParam('name');
+		document.getElementById("shu_name").innerHTML = getParam('name');
+	</script>
+    <script>
+      var window_height = Math.max(
+        window.innerHeight,
+        document.documentElement.clientHeight,
+        document.body.clientHeight,
+        $(window).height()
+      );
+      console.log("window_height ->" + window_height);
+
+      var theme = "pure_words";
+      console.log("theme ->" + theme);
+      var theme_content = {
+        pure_words_content:
+          "\r\n新年快乐，打开前置，看到了吗，我爱的你💕",
+		  chase_benefit: ["你是我拔掉氧气罐都想吻的人", "你是我跑完8000米还想拥抱的人", "你是我自罚三杯都不肯开口的秘密", "你是我赴汤蹈火都不肯放下的执着", "你是我电量只剩1%也想回信息的人", "你是我穷极一生不想醒来的梦"],
+
+        typed_bool: "typed_n",
+        cursor_char: "cursor_heart",
+        bg_style_pure_words: "bg_opacity",
+        bg_img:
+          "https://wimg.588ku.com/gif620/21/01/07/8a32e8e7c0bafffb61e471957c012360.gif",
+        simple_page_content:
+          "&lt;h2 style=&quot;color: rgb(255, 88, 61);&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;\/h2&gt;&lt;h2 style=&quot;color: rgb(255, 88, 61);&quot;&gt;&lt;span style=&quot;color: rgb(255, 88, 61); font-size: 1.2em;&quot;&gt;&lt;br&gt;&lt;\/span&gt;&lt;\/h2&gt;&lt;h2&gt;&lt;span style=&quot;font-size: 1.2em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;\/span&gt;&lt;span style=&quot;color: rgb(255, 88, 61); font-size: 1.2em;&quot;&gt;2021 &amp;nbsp;&lt;\/span&gt;&lt;span style=&quot;color: rgb(255, 88, 61); font-size: 1.2em;&quot;&gt;\u8de8\u5e74\u5feb\u4e50\u5440&lt;\/span&gt;&lt;br&gt;&lt;\/h2&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(255, 88, 61); font-size: 1.2em;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; \ud83d\udc95\ud83d\udc95\ud83d\udc95\ud83d\ude1c\ud83d\ude1c\ud83d\ude1c&lt;\/span&gt;&lt;\/p&gt;",
+        video_page_content: "",
+        bg_style: "bg_custom",
+      };
+      console.log(theme_content);
+
+      var music_json = {
+        music_select: "m_online",
+        m_online_id: "6",
+        m_online_url:
+          "https://s1.ananas.chaoxing.com/audio/a7/94/ce/57f9cb41b740955310e64e0fc791b756/audio.mp3",
+        m_upload_name: "null",
+        m_upload_url: "null",
+      };
+      console.log(music_json);
+      var record_json = {
+        record_bool: "r_false",
+        r_wechat_time: "null",
+        r_wechat_url: "null",
+        r_wechat_amr: "null",
+      };
+      console.log(record_json);
+      var signPackage = {
+        appid: "wx47f716bdd7699533",
+        timestamp: 1609064921,
+        nonceStr: "QdXZBjho7ItONCRB",
+        url: "http:\/\/www.makusi.cn\/Home\/Play\/play_show\/ws\/YGdsmm1q",
+        signature: "0bea9365daec127fdd35132bf1ca11d6383f711c",
+        rawString:
+          "jsapi_ticket=sM4AOVdWfPE4DxkXGEs8VHINcjHJVwMsFjJyfreRy7CROryLa-AapzYDjambNwi4KTzP3w70EZc6LGZ-LQCNCw&noncestr=QdXZBjho7ItONCRB&timestamp=1609064921&url=http:\/\/www.makusi.cn\/Home\/Play\/play_show\/ws\/YGdsmm1q",
+      };
+
+      var main_title = "2023跨年快乐";
+      // console.log(main_title);
+      if (main_title == "" || main_title == "null") {
+        //允许标题为空
+        document.title = "慢慢喜欢你";
+      }
+      // console.log("");
+
+      var pure_words_content = theme_content["pure_words_content"];
+      var str_cursorChar;
+      var typed_bool;
+
+      var interval_pw_height;
+      var height_div_pw = $(".div_pure_words_height").height();
+      function init_pure_words() {
+        //允许内容为空时直接展示，不设置为随机内容，用于空主题
+        if (typeof pure_words_content == "undefined") {
+          //处理全新作品
+          var array_str_temp = [];
+          random_text_array(array_str_temp, 12); //获取随机的模板文字
+          // array_str_temp.push('你现在看到的只是案例，文字是可以自定义哒，6000字以下');
+          pure_words_content = array_str_temp.join("\r\r");
+        }
+        $(".div_pure_words_height").html(pure_words_content + "22222"); //初始化复制内容，撑开文档高度
+
+        // 初始化设置div的bg图片 初始化设置div的bg图片
+        if (
+          typeof theme_content["bg_style_pure_words"] != "undefined" &&
+          theme_content["bg_style_pure_words"] == "bg_opacity"
+        ) {
+          if (
+            typeof theme_content["bg_img"] != "undefined" &&
+            theme_content["bg_img"] != ""
+          ) {
+            $(".div_pure_words_bg").css({
+              "background-image": "url(" + theme_content["bg_img"] + ")",
+            });
+          }
+        }
+
+        //以下是打字效果的js
+        if (
+          typeof theme_content["cursor_char"] != "undefined" &&
+          theme_content["cursor_char"] != ""
+        ) {
+          switch (
+            theme_content["cursor_char"] //设置打字光标的样式
+          ) {
+            case "cursor_heart":
+              str_cursorChar = "❤";
+              break;
+            case "cursor_sub":
+              str_cursorChar = "_";
+              break;
+            case "cursor_music":
+              str_cursorChar = "♫";
+              break;
+            case "cursor_star":
+              str_cursorChar = "★";
+              break;
+            case "cursor_sun":
+              str_cursorChar = "☀";
+              break;
+            default:
+              str_cursorChar = "|";
+          }
+        } else {
+          //处理全新作品，默认显示打字效果
+          str_cursorChar = "❤";
+        }
+
+        //判断用户有没有选择打字效果
+        if (
+          typeof theme_content["typed_bool"] != "undefined" &&
+          theme_content["typed_bool"] != ""
+        ) {
+          typed_bool = theme_content["typed_bool"] == "typed_y" ? true : false;
+        } else {
+          typed_bool = false; //默认显示打字效果
+        }
+        // console.log(typed_bool);
+
+        display_pure_words();
+        $(".div_pure_words").fadeIn();
+
+        interval_pw_height = setInterval(function () {
+          console.log(
+            "div_pure_words_height -> " + $(".div_pure_words_height").height()
+          );
+          var least_height_div_pw = $(".div_pure_words_height").height();
+          if (least_height_div_pw > height_div_pw) {
+            height_div_pw = least_height_div_pw;
+          } else {
+            clearInterval(interval_pw_height);
+            $(".div_pure_words_height").height(least_height_div_pw + 100);
+            if ($(".div_pure_words_height").height() < window_height) {
+              $(".div_pure_words_height").height(window_height); //不能小于窗口的高度
+              console.log("let us be high as window");
+            }
+          }
+        }, 100);
+      }
+
+      function display_pure_words() {
+        if (typed_bool) {
+          var typed_pure_words = new Typed("#span_pw_typed", {
+            strings: [pure_words_content], //输入内容, 支持html标签
+            typeSpeed: 120, //打字速度
+            cursorChar: str_cursorChar, //替换光标的样式
+            contentType: "html", //值为html时，将打印的文本标签直接解析html标签
+            onComplete: function (abc) {
+              // console.log(abc);
+              console.log("finished typing words");
+              // console.log($('#span_pw_typed').height()-$(".div_pure_words_height").height());
+            },
+          });
+        } else {
+          //如果不需要打字效果就直接显示
+          $("#span_pw_typed").html(pure_words_content).fadeIn();
+        }
+        init_attachment();
+      }
+
+      function random_text_array(temp_array, length) {
+        //获取随机的模板文字
+        console.log("random_text_array");
+        var random_array = [];
+        while (random_array.length < length) {
+          // var random_num=Math.floor(Math.random()*(array_as_pics.length-0))+0;
+          var random_num = Math.floor(
+            Math.random() * array_as_words_love.length
+          ); //随机取值
+          if (random_array.indexOf(random_num) == -1) {
+            random_array.push(random_num);
+          }
+        }
+        // console.log(random_array);
+        for (var i = 0; i < length; i++) {
+
+          temp_array.push(array_as_words_love[random_array[i]]); //获取随机的模板文字
+        }
+      }
+    </script>
+
+    <!-- 按需加载，选择此片头时方才加载 -->
+
+    <script>
+      var start_content = {
+        intersect_text:
+          "<br> &nbsp;&nbsp;&nbsp;&nbsp; 春节到，新年新气象，美好祝愿送给你，愿你幸福叠加，烦恼递减，快乐翻倍，好运开平方，带着我的新愿踏上征程吧，愿你勤奋进取，开创自己的一片蓝天，春节快乐！<br><br> ",
+        cursor_char: "cursor_heart",
+        bg_style: "bg_custom",
+        bg_img:
+          "http://p.ananas.chaoxing.com/star3/origin/bd24790975874fad8c59dbcf3e2cacc2.png",
+		  // http://p.ananas.chaoxing.com/star3/origin/da1942c40f56aa3e09465c0877659e7f.png
+        img_bool: "img_true",
+        img_src:
+          "http://p.ananas.chaoxing.com/star3/origin/266adc73f4e904d1ea3c7ce0c43df5d9.png",
+      }; //可能为null
+      console.log(start_content);
+
+      var start_id;
+      $(function () {
+        //此事件为触发互动创意
+        start_id = "intersect"; //可能为null
+        init_start(start_id);
+      });
+
+      function init_start(start_id) {
+        console.log("init_start ->" + start_id);
+        switch (start_id) {
+          case "loveformat":
+            $(".div_loveformat").show();
+            init_loveformat();
+            break;
+          case "hearttree":
+            $("#div_hearttree").show();
+            init_hearttree();
+            break;
+          case "courage":
+            $("#div_courage").show();
+            init_courage();
+            break;
+          case "birthdaycake":
+            $("#div_dbcake").show();
+            init_birthdaycake();
+            break;
+          case "intersect":
+            $("#div_intersect").show();
+            init_intersect();
+            break;
+          case "onlyyou":
+            $("#div_onlyyou").show();
+            init_onlyyou();
+            break;
+          default:
+            init_theme();
+        }
+      }
+
+      //开始动画主体部分
+      function init_theme() {
+        console.log("init_theme");
+        $("#div_start_bg").fadeOut();
+        init_pure_words();
+      }
+    </script>
+
+    <!-- 按需加载，选择此片头时方才加载 -->
+    <script src="static/js/start_intersect.js"></script>
+
+    <script>
+      var attachment = "null"; //可能为null
+      var attached_content = { bool_save: false }; //可能为null
+      console.log(attached_content);
+
+      function init_attachment() {
+        //开始attachment
+        console.log("init_attachment ->" + attachment);
+        switch (attachment) {
+          case "timer":
+            init_at_timer();
+            break;
+          default:
+            return;
+        }
+      }
+    </script>
+
+    <script src="static/js/jweixin-1.6.0.js"></script>
+    <script src="static/js/theme_common.js"></script>
+    <!-- 音乐控制和微信设置等公共部分js外部引入 -->
+  </body>
+</html>
