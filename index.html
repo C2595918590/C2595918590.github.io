@@ -12,6 +12,10 @@
 			text-decoration:none;
 			font-size: 3vh;
 		}
+		a:hover, a:visited, a:link, a:active {
+    		color:rgb(0, 0, 0);
+		}
+		
 		body{
 			background-color: #eee;
 			margin: 0;
@@ -110,14 +114,20 @@
 		}
 		.main-body-right-top{
 			height: 30%;
+			font-size: 2.5vh;
 			/* font-size: 8ch!important; */
 		}
 		#main-body-center div{
 			margin-bottom: 0.8vh;
+			
 		}
 		.main-body-right-center{
-			height: 50%;
-
+			height: 50%;	
+			font-size: 2.5vh!important;
+		}
+		.main-body-right-center *{
+			
+			font-size: 2.5vh!important;
 		}
 		#big div{
 			box-shadow: 0.3vh 0.2vh 0.2vh #888 ;
@@ -151,7 +161,7 @@
 				<div style="box-shadow: none;"><a href="star/index.html">星空</a></div>
 				<div style="box-shadow: none;"><a href="data/audioGame/1/index.html">音游</a></div>
 				<div style="box-shadow: none;"><a href="data/wallpaper/index.html">找壁纸</a></div>
-				<div style="box-shadow: none;"><a href="data/music/index.php">听音乐</a></div>
+				<!-- <div style="box-shadow: none;"><a href="data/music/index.php">听音乐</a></div> -->
 				<div style="box-shadow: none;"><a href="data\homepage\index.html">主页页面</a></div>
 				<div style="box-shadow: none;"><a href="data\birthday\index.html">生日快乐</a></div>
 			</div><!-- top -->
@@ -195,12 +205,24 @@
 				<div id="main-body-rigth" class="mgl">
 					<div class="main-body-right-top">
 						<b>git命令：</b>
-						<br>&nbsp;&nbsp;1、git clone "仓库地址" 克隆
-						<br>&nbsp;&nbsp;2、git add . 添加文件
-						<br>&nbsp;&nbsp;3、git commit -m “说明” 
-						<br>&nbsp;&nbsp;4、git push 上传
-														</div>
-					<div class="main-body-right-center"></div>
+						<ol>
+							<li>git clone "仓库地址" 克隆</li>
+							<li>git add . 添加文件</li>
+							<li>git commit -m “说明” </li>
+							<li>git push 上传</li>
+						</ol>
+					</div>
+					<div class="main-body-right-center">
+						<b><a href="data/Vue/Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园.html target="_blank">Vue环境搭建教程：</a></b>
+						<ol>
+							<li><a href="http://nodejs.p2hp.com/" target="_blank">下载Node.js</a></li>
+							<li>npm install -g vue-cli &nbsp;||&nbsp;npm -v</li>
+							<li>npm install -g cnpm --registry=https://registry.npm.taobao.org</li>
+							<li>cnpm install -g vue-cli &nbsp;||&nbsp;vue</li>
+							<li>vue init webpack vue-demo</li>
+							<li>cnpm run dev</li>
+						</ol>
+					</div>
 					<div class="main-body-right-top"></div>
 					<div class="main-body-right-center"></div>
 				</div>

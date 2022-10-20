@@ -25,7 +25,7 @@ var S = {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
       // S.UI.simulate('|#countdown 5||其实我一直|想对你说|I LOVE YOU|希望|你|能给我|一个|机会|呵护你|爱护你|#rectangle|');
-      S.UI.simulate('|#countdown 5|你来啦|在这个|大喜日子|里|其实我一直|想对你说|xxx|祝你|生日快乐！|天天开心！|-闯荡留-|#rectangle|');
+      S.UI.simulate('|#countdown 5|你来啦|在这个|大喜日子|里|其实我一直|想对你说|xxx|祝你|生日快乐！|天天开心！|-闯荡留-||');
     }
 
     S.Drawing.loop(function () {

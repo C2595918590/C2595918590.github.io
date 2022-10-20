@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://www.cnblogs.com/xuyupengblogs/p/15133358.html -->
+<html lang="zh-cn" style="--olcb-folder-code-block-max-height:80vh;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <meta name="description" content="安装Vue环境整整花了我半小时，但我还是用几分钟总结下来了，避免下次用个新电脑又得搭建环境浪费时间了，下面是我搭建环境的步骤，与君同享，共同学习，若有错误，欢迎吐槽评论！&amp;#160;另外，我的电脑是w">
+    <meta property="og:description" content="安装Vue环境整整花了我半小时，但我还是用几分钟总结下来了，避免下次用个新电脑又得搭建环境浪费时间了，下面是我搭建环境的步骤，与君同享，共同学习，若有错误，欢迎吐槽评论！&amp;#160;另外，我的电脑是w">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="https://common.cnblogs.com/favicon.svg" type="image/svg+xml">
+    
+    <style>#home :not(.cnblogs_code):not(.cnblogs_Highlighter)>pre:not([highlighted]):not([class*="brush:"]) code:not(.hljs), :not(.cnblogs_code):not(.cnblogs_Highlighter)>pre:not([highlighted]):not([class*="brush:"]) code:not(.hljs) {background: rgb(245, 245, 245);
+        padding: 12px;
+        border: 0.995575px solid rgb(204, 204, 204);
+        border-radius: 3px;
+        border-color: transparent;
+        color: rgb(68, 68, 68);
+        font-family: "Courier New", sans-serif;
+        font-size: 12px</style><link rel="stylesheet" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/blog-common.min.css">
+    
+
+    
+        <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/cnblogs.css">
+    <link type="text/css" rel="stylesheet" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/custom.css">
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/bundle-simplememory-mobile-pure.min.css">
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xuyupengblogs/rss">
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xuyupengblogs/rsd.xml">
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xuyupengblogs/wlwmanifest.xml">
+    <script type="text/javascript" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/encoder.js.下载"></script><script>
+        var currentBlogId = 604190;
+        var currentBlogApp = 'xuyupengblogs';
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleMemory';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.cb_enable_mathjax = false;
+        window.mathEngine = 0;
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+        window.darkModeCodeHighlightTheme = 'vs2015';
+        window.isDarkCodeHighlightTheme = false;
+        window.isDarkModeCodeHighlightThemeDark = true;
+        window.isDisableCodeHighlighter = false;
+        window.enableCodeThemeTypeFollowSystem = false;
+    </script>
+        <script>
+            var currentPostDateAdded = '2021-08-12 17:30';
+        </script>
+    <script src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+    <script src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/blog-common.min.js.下载"></script><style>.medium-zoom-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 300ms;
+  will-change: opacity;
+}
+
+.medium-zoom--opened .medium-zoom-overlay {
+  cursor: pointer;
+  cursor: zoom-out;
+  opacity: 1;
+}
+
+.medium-zoom-image {
+  cursor: pointer;
+  cursor: zoom-in;
+  /*
+    The `transition` is marked as "!important" for the animation to happen
+    even though it's overriden by another inline `transition` style attribute.
+
+    This is problematic with frameworks that generate inline styles on their
+    images (e.g. Gatsby).
+
+    See https://github.com/francoischalifour/medium-zoom/issues/110
+   */
+  transition: transform 300ms cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.medium-zoom-image--hidden {
+  visibility: hidden;
+}
+
+.medium-zoom-image--opened {
+  position: relative;
+  cursor: pointer;
+  cursor: zoom-out;
+  will-change: transform;
+}
+</style><script id="hljs-script" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/highlight.min.js.下载" type="text/javascript" async=""></script>
+    
+
+    
+<link rel="stylesheet" type="text/css" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/page-common-comArticle.5710a0e7.css"><link rel="stylesheet" type="text/css" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/page-article.5710a0e7.css"><link rel="stylesheet" type="text/css" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/comBefore.5710a0e7.css"><link rel="stylesheet" type="text/css" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/fonticon.5710a0e7.css"><link rel="stylesheet" type="text/css" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/google-fonts.5710a0e7.css"><link rel="stylesheet" type="text/css" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/nhBannerAnimation.5710a0e7.css"></head>
+<body class="skin-simplememory no-navbar" style="overflow: auto;" data-bs-spy="scroll" data-bs-target="#articleDirectory" data-bs-offset="0" tabindex="0"><div id="dayNightSwitch" class="generalWrapper"> <div class="onOff daySwitch"> <div class="star star1"></div> <div class="star star2"></div> <div class="star star3"></div> <div class="star star4"></div> <div class="star star5"></div> <div class="star sky"></div> <div class="sunMoon"> <div class="crater crater1"></div> <div class="crater crater2"></div> <div class="crater crater3"></div> <div class="cloud part1"></div> <div class="cloud part2"></div> </div> </div> </div>
+<a name="top" style="display: none;"></a>
+<div id="top_nav" class="navbar forpc navbar-custom">
+    <nav id="nav_main" class="navbar-main">
+        <ul id="nav_left" class="navbar-list navbar-left">
+            <li class="navbar-branding">
+                <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                    <img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/logo.svg" alt="博客园Logo">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.cnblogs.com/" onclick="countClicks(&#39;skin-navbar-sitehome&#39;)">首页</a>
+            </li>
+            <li>
+                <a href="https://news.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-news&#39;)">新闻</a>
+            </li>
+            <li>
+                <a href="https://q.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-q&#39;)">博问</a>
+            </li>
+            <li>
+                <a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-brands&#39;)">专区</a>
+            </li>
+            <li>
+                <a href="https://ing.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-ing&#39;)">闪存</a>
+            </li>
+            <li>
+                <a href="https://edu.cnblogs.com/" onclick="countClicks(&#39;nav&#39;, &#39;skin-navbar-edu&#39;)">班级</a>
+            </li>
+        </ul>
+        <ul id="nav_right" class="navbar-list navbar-right">
+            <li>
+                <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                    <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3">
+                    <button type="submit" id="zzk_search_button">
+                        <img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/search.svg" alt="搜索">
+                    </button>
+                </form>
+            </li>
+            <li id="navbar_login_status" class="navbar-list">
+                <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔" style="display: none;">
+                    <img id="new_post_icon" class="navbar-icon" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/newpost.svg" alt="写随笔">
+                </a>
+                <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客" style="display: none;">
+                    <img id="myblog_icon" class="navbar-icon" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/myblog.svg" alt="我的博客">
+                </a>
+                <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息" style="display: none;">
+                    <img id="msg_icon" class="navbar-icon" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/message.svg" alt="短消息">
+                    <span id="msg_count" style="display: none"></span>
+                </a>
+                <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                    <img class="navbar-icon" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/lite-mode-on.svg" alt="简洁模式">
+                </a>
+                <div id="user_info" class="navbar-user-info dropdown" style="display: none;">
+                    <a class="dropdown-button" href="https://home.cnblogs.com/">
+                        <img id="user_icon" class="navbar-avatar" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/avatar-default.svg" alt="用户头像">
+                    </a>
+                    <div class="dropdown-menu">
+                        <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                        <a href="https://home.cnblogs.com/">我的园子</a>
+                        <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                        <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/lite-mode-check.svg" class="hide"><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                        <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                    </div>
+                </div>
+                <a class="navbar-anonymous" href="https://account.cnblogs.com/signup" style="display: inline;">注册</a>
+                <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()" style="display: inline;">登录</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+<!--done-->
+<div id="home" style="margin-top: 271px;">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/xuyupengblogs/"><img id="blogLogo" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/logo.gif" alt="返回主页"></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xuyupengblogs/">Hello小码</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xuyupengblogs/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Hello%E5%B0%8F%E7%A0%81">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/xuyupengblogs/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<span id="stats_post_count">随笔 - 91&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 0&nbsp; </span>
+<span id="stats-total-view-count">阅读 - 
+<span title="总阅读数: 73032">
+73032</span></span>
+
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent" style="">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle post-del-title" href="https://www.cnblogs.com/xuyupengblogs/p/15133358.html">
+    <span role="heading" aria-level="2">Vue环境搭建以及相关工具安装（超详细）步骤</span>
+    
+</a><button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>安装Vue环境整整花了我半小时，但我还是用几分钟总结下来了，避免下次用个新电脑又得搭建环境浪费时间了，下面是我搭建环境的步骤，与君同享，共同学习，若有错误，欢迎吐槽评论！&nbsp;<br>另外，我的电脑是win10系统。</p>
+<h3 id="tid-n7NP6j" tid="tid-n7NP6j">一、NodeJS下载安装<button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>没有学习过<a class="replace_word" title="Node.js知识库" href="http://lib.csdn.net/base/nodejs" rel="noopener">Node.js</a>的同学很有疑问，这个下载的作用是什么？我们在学习vue.<a class="replace_word" title="JavaScript知识库" href="http://lib.csdn.net/base/javascript" rel="noopener">js</a>时，不一定要是学过<a class="replace_word" title="Node.js知识库" href="http://lib.csdn.net/base/nodejs" rel="noopener">node.js</a>的，我们需要的是NodeJS里npm工具，npm是NodeJS下的一个包管理工具，它可以很方便的帮你管理（可以简单理解为下载）各类前端的框架或插件，类似于<a class="replace_word" title="PHP知识库" href="http://lib.csdn.net/base/php" rel="noopener">PHP</a>的composer，Twitter 的 Bower 一样。使用Vue不需要安装NodeJS，这里下载NodeJS只是为了使用其内置的NPM工具，所以不需要你有任何的NodeJS基础，只需要运行 npm install vue 命令，即可把 Vue 的最新版本下载至 node_modules 文件夹。我们可以去官网下载<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a>&nbsp; &nbsp; &nbsp;&nbsp;附安装教程：<a href="http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html" rel="noopener">http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html</a></p>
+<p><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812163858757-273008825.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812163858757-273008825.png"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3 id="tid-N6HRPf" tid="tid-N6HRPf">二、安装vue-cli<button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p class="p0">vue-cli脚手架模板是基于node下的npm来完成安装的所以首先需要安装node，在安装的过程中可以根据个人</p>
+<p class="p0">喜好使用淘宝的镜像，但是要先安装cnpm（npm实际已经存在nodejs安装文件中~~~所以上面第一步下载过nodejs的就可以跳过这个步骤了）</p>
+<p class="p0">打开命令窗口（win+r）,输入命令：</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_635548" class="syntaxhighlighter  csharp"><div class="toolbar"><span><a href="https://www.cnblogs.com/xuyupengblogs/p/15133358.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="csharp plain">npm install --global vue-cli</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>会出现下面这种效果</p>
+<p><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812164605300-7050450.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812164605300-7050450.png"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;然后用命令行“npm -v”或“node -v”查看安装的版本号，以此来检测是否安装成功（第一步安装nodejs的可以检验一下）：</p>
+<p><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812165150414-1984799867.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812165150414-1984799867.png"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3 id="tid-iGyEAb" tid="tid-iGyEAb">三、cnpm的安装<button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>安装完node之后，npm包含的很多依赖包是部署在国外的，下载速度是超级慢。所以我们要安装cnpm，cnpm是淘宝对npm的镜像服务器，这样依赖的包安装起来就快多了。<br>安装命令为：</p>
+<div class="cnblogs_code">
+<code-box id="code-XPhYGr"><button boxid="code-XPhYGr" type="button" class="clipboard code-copay-btn" data-clipboard-action="copy" data-clipboard-target="#code-XPhYGr pre" aria-label="复制代码"><i class="iconfont icon-fuzhi1"></i></button><div class="code-tools" style="background: rgb(245, 245, 250);"></div><pre boxid="code-XPhYGr" style="background: rgb(245, 245, 250);">npm install -g cnpm --registry=https:<span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">registry.npm.taobao.org</span></pre></code-box>
+</div>
+<p>&nbsp;<a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171102499-1839900970.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171102499-1839900970.png"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3 id="tid-NEZkTf" tid="tid-NEZkTf">四、vue-cli的安装(cnpm下再全局安装vue-cli)<button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>vue-cli是vue官方提供的一个命令行工具，可用于快速搭建大型单页应用。该工具提供开箱即用的构建工具配置，带来现代化的前端开发流程。只需一分钟即可启动带热重载、保存时静态检查以及可用于生产环境的构建配置的项目。<br>安装命令为：cnpm install -g vue-cli，回车，等待安装。</p>
+<p><em>附更新版本命令：</em><em id="__mceDel">&nbsp;npm&nbsp;install&nbsp;-g&nbsp;vue-cli@3.0.4 ，@后为需要更新的版本号</em></p>
+<p><em><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171220784-1542159721.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171220784-1542159721.png"></a></em></p>
+<p>&nbsp;</p>
+<p><em><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171402932-1694575162.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171402932-1694575162.png"></a></em></p>
+<p>&nbsp;安装完后，检查是否安装成功，输入vue，出现以下提示表示安装成功：</p>
+<p><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171619855-1733168554.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171619855-1733168554.png"></a></p>
+<h3 id="tid-ZpKZHY" tid="tid-ZpKZHY">五、新建一个Vue项目<button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>在nodejs目录下新建一个项目文件夹，命名为 vue-demo，cd到此文件夹，输入:vue init webpack vue-demo，回车之后等待下载依赖包（建议选择网络比较好的区域）：</p>
+<p><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171854665-1246642521.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812171854665-1246642521.png"></a></p>
+<p><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812172102258-1322024556.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812172102258-1322024556.png"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3 id="tid-ypMKi3" tid="tid-ypMKi3">六、运行项目<button class="cnblogs-toc-button" title="显示目录导航" aria-expanded="false"></button></h3>
+<p>在命令行里输入 cnpm run dev，执行完成后启动项目（输入运行后给的地址），浏览器出现以下接结果，说明启动成功。注意浏览器的版本，低版本的不支持哦</p>
+<p><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812172810828-414275628.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812172810828-414275628.png"></a></p>
+<p>&nbsp;到此就成功的配置好Vue环境了！</p>
+<p><a data-fancybox="gallery" href="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812173055523-26590425.png"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/2039506-20210812173055523-26590425.png"></a></p>
+<p>&nbsp;</p>
+
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+
+<script>
+    var cb_entryId = 15133358, cb_entryCreatedDate = '2021-08-12 17:30', cb_postType = 1, cb_postTitle = 'Vue环境搭建以及相关工具安装（超详细）步骤';
+    var allowComments = true, cb_blogId = 604190, cb_blogApp = 'xuyupengblogs', cb_blogUserGuid = 'f59acd4b-59f5-45aa-2e9f-08d7f668ab52';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    updatePostStats(
+            [cb_entryId],
+            function(id, count) { $("#post_view_count").text(count) },
+            function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem"><!--done-->
+<h3 class="catListTitle">公告</h3>
+
+<div id="blog-news"><div id="progressBar"><div id="top-progress-bar" style="position: relative; top: 0px; left: 0px; right: 0px; background-color: rgb(119, 182, 255); height: 2px; width: 1%; transition: width 0.2s ease 0s, opacity 0.6s ease 0s; opacity: 1;"></div></div><div id="rightMenu"> <div id="rtaDirectory" class="rightMenuItem" style=""> <span class="rightMenuSpan rtaDirectorySpan"> 文章目录 </span> <i banmv="" class="iconfont icon-mulu"></i> </div> <span class="hideRightMenu"> <div id="rightDiggit" class="rightMenuItem" clickflg="false" style="" onclick="votePost(15133358,&#39;Digg&#39;)"> <span class="rightMenuSpan rightDiggitSpan">0</span> <i class="iconfont icon-zan1"></i> </div> <div id="rightBuryit" class="rightMenuItem" clickflg="false" style="" onclick="votePost(15133358,&#39;Bury&#39;)"> <span class="rightMenuSpan rightBuryitSpan">0</span> <i class="iconfont icon-buzan"></i> </div> <div id="rightDashang" class="rightMenuItem" clickflg="false" style="display:none"> <span class="rightMenuSpan rightDanshanSpan"> <div class="ds-pay"> <div class="ds-alipay" style="display:none"> <img \=""> <span>Alipay</span> </div> <div class="ds-wecat" style="display:none"> <img \=""> <span>WeChat</span> </div> </div> </span> <i class="iconfont icon-dashang2"></i> </div> <div id="rightGzh" class="rightMenuItem" clickflg="false" style="display:none"> <span class="rightMenuSpan rightGzhSpan"> <div class="ds-pay"> <div class="ds-gzh"> <img><span>qrCode</span> </div> </div> </span> <i class="iconfont icon-erweima4"></i> </div> <div id="attention" class="rightMenuItem" clickflg="false" onclick="follow(&#39;f59acd4b-59f5-45aa-2e9f-08d7f668ab52&#39;)"> <span class="rightMenuSpan attentionSpan">关注</span> <i class="iconfont icon-dianzan"></i> </div> </span> <div id="rightMenuSite" class="rightMenuItem" clickflg="true"> <span class="rightMenuSpan"> 点击开启 </span> <i banmv="" class="iconfont icon-shezhi3" style="transform: rotate(291deg); transform-origin: 50% 50%;"></i> </div> <div id="toUpDown" class="rightMenuItem" data="down"> <span class="rightMenuSpan toUpDownSpan">跳至底部</span> <div id="toUpDownI" style="transform: rotate(-180deg); transform-origin: 50% 50%;"> <i banmv="" class="iconfont icon-zhiding"></i> </div> </div> </div><div class="main-header" style="background: url(&quot;https://pic.netbian.com/uploads/allimg/210426/220238-16194457587967.jpg&quot;) center center / cover no-repeat rgb(34, 34, 34); height: 40vh;"> <div id="nhBannerAnimation"> <ul class="circles"> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> </ul> </div> <div class="vertical"> <div class="main-header-content inner" style="max-width: 100vw;"> <h1 class="page-title" id="homeTopTitle" style="display: none;"><span></span></h1> <h2 class="page-description" id="hitokoto"></h2> <h3 class="page-author" id="hitokotoAuthor"></h3> <h1 class="sb-title" id="sbTitle"> <span id="sbTitleText" style="color:#fff">
+    Vue环境搭建以及相关工具安装（超详细）步骤
+    </span> <span id="sbTitleConsole" style="visibility: visible;">_</span> </h1> <p class="article-info" id="articleInfo"><p class="article-info-text"><span class="postMeta"><i class="iconfont icon-time1"></i>21/08/12 17:30<i class="iconfont icon-browse"></i>2551<i class="iconfont icon-interactive"></i>0<i class="iconfont icon-hot"></i>0<br><i class="iconfont icon-wenzi4"></i>1782<i class="iconfont icon-shangwutubiao-"></i>3:33 ~ 5:56</span></p><a href="https://www.cnblogs.com/xuyupengblogs/tag/Vue/" target="_blank"><span class="article-info-tag article-tag-color">Vue</span></a></p> </div> </div> <a class="scroll-down" href="javascript:void(0);" data-offset="-45" style="display: none;"> <span class="hidden">Scroll Down</span> <i class="scroll-down-icon iconfont icon-fanhui"></i> </a> </div><div class="container"> <div class="menu-wrap optiscroll is-enabled" id="menuWrap" style="display:none"><div class=" optiscroll-content" style="right: -3px; bottom: -3px;"> <nav class="menu"> <div class="introduce-box" style="background: url(&quot;https://cdn.cnblogs.com/jsDelivr/gh/BNDong/Cnblogs-Theme-SimpleMemory@v2.0.2/dist/images/82deab5871314fe2ef83.webp&quot;) center center / 100% no-repeat rgb(0, 0, 0);"> <div class="introduce-head"> <div class="introduce-via" id="menuBlogAvatar"><img src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/20200516145840.png"></div> </div> <div id="introduce">
+        昵称：
+        <a href="https://home.cnblogs.com/u/xuyupengblogs/">
+            Hello小码
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/xuyupengblogs/" title="入园时间：2020-05-16">
+            2年5个月
+        </a>
+        <br>
+        粉丝：
+        <a class="follower-count" href="https://home.cnblogs.com/u/xuyupengblogs/followers/">
+            5
+        </a>
+        <br>
+        关注：
+        <a class="folowing-count" href="https://home.cnblogs.com/u/xuyupengblogs/followees/">
+            2
+        </a>
+        <div id="p_b_follow" class="follow-tip">
+<a href="javascript:void(0)" onclick="follow(&#39;f59acd4b-59f5-45aa-2e9f-08d7f668ab52&#39;)">+加关注</a></div>
+        
+    </div> </div> <div class="nav-title"></div> <div class="icon-list"> <ul id="m-nav-list"> <li> <a href="https://www.cnblogs.com/xuyupengblogs" target="_self"> <i class="iconfont icon-homepage_fill"></i>首页 </a> </li> <li> <a href="https://msg.cnblogs.com/send/xuyupengblogs" target="_blank"> <i class="iconfont icon-zhifeiji"></i>联系 </a> </li> <li> <a href="javascript:void(0)" onclick="$(&quot;#blog_nav_rss&quot;).trigger(&quot;click&quot;)" data-rss="https://www.cnblogs.com/xuyupengblogs/rss/"> <i class="iconfont icon-qinmifu"></i>订阅 </a> </li> <li> <a href="https://i.cnblogs.com/" target="_blank"> <i class="iconfont icon-setup_fill"></i>管理 </a> </li></ul> </div> <span id="calendar-box"><div id="blog-calendar" style="visibility: visible;">
+
+<table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar" border="0">
+    <tbody>
+        <tr>
+            <td colspan="7">
+                <table class="CalTitle" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2022/09/20&#39;); return false;">&lt;</a>
+                            </td>
+                            <td align="center">2022年10月</td>
+                            <td align="right" class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2022/11/20&#39;); return false;">&gt;</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    <tr>
+        <th class="CalDayHeader" align="center" abbr="日" scope="col">日</th>
+        <th class="CalDayHeader" align="center" abbr="一" scope="col">一</th>
+        <th class="CalDayHeader" align="center" abbr="二" scope="col">二</th>
+        <th class="CalDayHeader" align="center" abbr="三" scope="col">三</th>
+        <th class="CalDayHeader" align="center" abbr="四" scope="col">四</th>
+        <th class="CalDayHeader" align="center" abbr="五" scope="col">五</th>
+        <th class="CalDayHeader" align="center" abbr="六" scope="col">六</th>
+    </tr>
+            <tr>
+                            <td class="CalOtherMonthDay" align="center">25</td>
+                            <td class="CalOtherMonthDay" align="center">26</td>
+                            <td class="CalOtherMonthDay" align="center">27</td>
+                            <td class="CalOtherMonthDay" align="center">28</td>
+                            <td class="CalOtherMonthDay" align="center">29</td>
+                            <td class="CalOtherMonthDay" align="center">30</td>
+                    <td class="CalWeekendDay" align="center">
+                        1
+                    </td>
+            </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            2
+                        </td>
+                            <td class="" align="center">
+                                3
+                            </td>
+                            <td class="" align="center">
+                                4
+                            </td>
+                            <td class="" align="center">
+                                5
+                            </td>
+                            <td class="" align="center">
+                                6
+                            </td>
+                            <td class="" align="center">
+                                7
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            8
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            9
+                        </td>
+                            <td class="" align="center">
+                                10
+                            </td>
+                            <td class="" align="center">
+                                11
+                            </td>
+                            <td class="" align="center">
+                                12
+                            </td>
+                            <td class="" align="center">
+                                13
+                            </td>
+                            <td class="" align="center">
+                                14
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            15
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            16
+                        </td>
+                            <td class="" align="center">
+                                17
+                            </td>
+                            <td class="" align="center">
+                                18
+                            </td>
+                            <td class="" align="center">
+                                19
+                            </td>
+                            <td class="CalTodayDay" align="center">
+                                20
+                            </td>
+                            <td class="" align="center">
+                                21
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            22
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            23
+                        </td>
+                            <td class="" align="center">
+                                24
+                            </td>
+                            <td class="" align="center">
+                                25
+                            </td>
+                            <td class="" align="center">
+                                26
+                            </td>
+                            <td class="" align="center">
+                                27
+                            </td>
+                            <td class="" align="center">
+                                28
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            29
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            30
+                        </td>
+                            <td class="" align="center">
+                                31
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                1
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                2
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                3
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                4
+                            </td>
+                        <td class="CalOtherMonthDay" align="center">
+                            5
+                        </td>
+                </tr>
+    </tbody>
+</table></div></span> <div class="m-list-title" style="display: block;"><span>找找看</span></div> <div class="m-icon-list" id="sb-sidebarSearchBox"><div id="sb_widget_my_zzk" class="div_my_zzk"><input id="q" type="text" onkeydown="return zzk_go_enter(event);" class="input_my_zzk"></div></div> <div class="m-list-title" style="display: block;"><span>积分排名<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-sidebarScorerank"><div><ul><li><a href="javascript:void(0);"><span class="iconfont icon-collection_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>积分 -	
+69522</a></li><li><a href="javascript:void(0);"><span class="iconfont icon-collection_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>排名 -	
+20389</a></li></ul></div></div> <span id="menuCustomList"></span> <div class="m-list-title" style="display: block;"><span>最新随笔<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-sidebarRecentposts"><div><ul><li><a href="https://www.cnblogs.com/xuyupengblogs/p/12950832.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>MySQL完美卸载及安装</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16550951.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>Couldn't check the working tree for unmerged files because of an error. detected dubious ownership in repository at 'C:/Java/IdeaProjects/bsirip-ir00' To add an exception for this directory</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16518302.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>idea2019.1.3版本激活破解教程</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16541447.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>针对win10系统所有版本激活工具</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16381064.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>One or more values in the INSERT statement, UPDATE statement, or foreign key update caused by a DELETE statement are not valid because the primary key, SQLCODE=-803, SQLSTATE=23505, DRIVER=4.21.29</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16485009.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>DB2死锁解决办法(SQLCODE=-911, SQLSTATE=40001)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16088216.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>IDEA如何更改javascript版本</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16088166.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>idea上没有上传(push)按钮或者下来代码按钮怎么办？</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16088041.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>idea如何设置git上传代码时忽略目标文件及文件夹</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16077512.html"><span class="iconfont icon-time_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>Git如何查看分支和添加并切换分支</a></li></ul></div></div> <div class="m-list-title" style="display: block;"><span>我的标签<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-toptags"><div><ul><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/java/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>java(16)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/DB2/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>DB2(14)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/Oracle/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>Oracle(13)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/idea/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>idea(9)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/HTML/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>HTML(7)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/MySQL/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>MySQL(5)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/Git/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>Git(5)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>开发工具(4)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/SQL/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>SQL(4)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/JS/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>JS(4)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/tag/"><span class="iconfont icon-label_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>更多</a></li></ul></div></div> <div class="m-list-title"><span>随笔分类<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-classify"></div> <div class="m-list-title"><span>文章分类<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-ArticleCategory"></div> <div class="m-list-title" style="display: block;"><span>阅读排行<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-topview"><div><ul><li><a href="https://www.cnblogs.com/xuyupengblogs/p/13232278.html"><span class="iconfont icon-browse_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>Dependency 'org.springframework.boot:spring-boot-devtools:<unknown>' not found less... (Ctrl+F1)  Inspection info: Inspects a Maven model for resolution problems.(4471)</unknown></a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/13068786.html"><span class="iconfont icon-browse_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>如何用电脑把文件刻录到光盘当中（前提电脑带光驱）(3845)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/14721737.html"><span class="iconfont icon-browse_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>如何将Oracle数据库表中的数据导入到另一个表里(3702)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/16550951.html"><span class="iconfont icon-browse_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>Couldn't check the working tree for unmerged files because of an error. detected dubious ownership in repository at 'C:/Java/IdeaProjects/bsirip-ir00' To add an exception for this directory(2888)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/15897221.html"><span class="iconfont icon-browse_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>SQL 错误 [42601]: An unexpected token ")" was found following "MOUNT4    FROM TEMP3".  Expected tokens may include:  ")".. SQLCODE=-104, SQLSTATE=42601, DRIVER=4.21.29(2837)</a></li></ul></div></div> <div class="m-list-title" style="display: block;"><span>推荐排行<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-topDiggPosts"><div><ul><li><a href="https://www.cnblogs.com/xuyupengblogs/p/15953700.html"><span class="iconfont icon-like_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>DB2 设置列的类型、缺省值（默认值）、非空等(1)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/p/15176729.html"><span class="iconfont icon-like_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>js中如何获取星期几的写法(1)</a></li></ul></div></div> <div class="m-list-title"><span>最新评论<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-recentComments"></div> <div class="m-list-title"><span>文章档案<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-articlearchive"></div> <div class="m-list-title" style="display: block;"><span>随笔档案<span class="iconfont icon-select m-list-title-select"></span></span> </div> <div class="m-icon-list" id="sb-record"><div><ul><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/08.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2022年8月(4)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/07.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2022年7月(2)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/04.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2022年4月(4)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/03.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2022年3月(5)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/02.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2022年2月(1)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/01.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2022年1月(4)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/12.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年12月(2)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/11.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年11月(3)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/09.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年9月(5)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/08.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年8月(5)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/07.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年7月(8)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/06.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年6月(16)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/05.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年5月(11)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/04.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年4月(5)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/03.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2021年3月(3)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2020/07.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2020年7月(12)</a></li><li><a href="https://www.cnblogs.com/xuyupengblogs/archive/2020/05.html" class="category-item-link" rel="" target=""><span class="iconfont icon-task_fill" style="color: #888;font-size: 14px;margin-right: 5px;"></span>2020年5月(1)</a></li></ul></div></div> </nav> <button class="close-button" id="close-button">Close Menu</button> <div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z"> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none"> <path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"></path> <desc>Created with Snap</desc><defs></defs></svg> </div> </div><div class="optiscroll-v"><b class="optiscroll-vtrack"></b></div><div class="optiscroll-h"><b class="optiscroll-htrack"></b></div></div> <button class="menu-button" id="open-button">MENU</button> <div class="content-wrap" id="content-wrap"></div> </div><div id="loading" style="display: none;"></div>
+    <script type="text/javascript">window['__document_write_ajax_callbacks__']['4']();</script><script type="text/javascript">window['__document_write_ajax_callbacks__']['1']();</script>
+<script type="text/javascript">window['__document_write_ajax_callbacks__']['5']();</script><script type="text/javascript">window['__document_write_ajax_callbacks__']['6']();</script><script>window['__document_write_ajax_callbacks__']['2']();</script>
+    <div id="profile_block">
+        昵称：
+        <a href="https://home.cnblogs.com/u/xuyupengblogs/">
+            Hello小码
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/xuyupengblogs/" title="入园时间：2020-05-16">
+            2年5个月
+        </a>
+        <br>
+        粉丝：
+        <a class="follower-count" href="https://home.cnblogs.com/u/xuyupengblogs/followers/">
+            5
+        </a>
+        <br>
+        关注：
+        <a class="folowing-count" href="https://home.cnblogs.com/u/xuyupengblogs/followees/">
+            2
+        </a>
+        <div id="p_b_follow" class="follow-tip">
+<a href="javascript:void(0)" onclick="follow(&#39;f59acd4b-59f5-45aa-2e9f-08d7f668ab52&#39;)">+加关注</a></div>
+        <script type="text/javascript">window['__document_write_ajax_callbacks__']['7']();</script><script>window['__document_write_ajax_callbacks__']['3']();</script>
+    </div>
+</div>
+
+</div>
+<div id="sidebar_c3"></div>
+			<script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><!-- 搜索 -->
+<div id="sidebar_search" class="sidebar-block">
+    <div id="sidebar_search" class="mySearch">
+        <h3 class="catListTitle">搜索</h3>
+        <div id="sidebar_search_box">
+            <div id="widget_my_zzk" class="div_my_zzk">
+                <input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk">
+            </div>
+            <div id="widget_my_google" class="div_my_zzk">
+                <input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 常用链接 -->
+<div id="sidebar_shortcut" class="sidebar-block"><div class="catListLink">
+<h3 class="catListTitle">
+常用链接
+</h3>
+<ul>
+    <li><a href="https://www.cnblogs.com/xuyupengblogs/p/" title="我的博客的随笔列表">我的随笔</a></li>
+<li><a href="https://www.cnblogs.com/xuyupengblogs/MyComments.html" title="我的发表过的评论列表">我的评论</a></li>
+<li><a href="https://www.cnblogs.com/xuyupengblogs/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li>
+<li><a href="https://www.cnblogs.com/xuyupengblogs/comments" title="我的博客的评论列表">最新评论</a></li>
+<li><a href="https://www.cnblogs.com/xuyupengblogs/tag/" title="我的博客的标签列表">我的标签</a></li>
+
+</ul>
+</div>
+
+</div>
+
+<!-- 最新随笔 -->
+<div id="sidebar_recentposts" class="sidebar-block"><div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+    <ul>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/12950832.html">1.MySQL完美卸载及安装</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16550951.html">2.Couldn't check the working tree for unmerged files because of an error. detected dubious ownership in repository at 'C:/Java/IdeaProjects/bsirip-ir00' To add an exception for this directory</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16518302.html">3.idea2019.1.3版本激活破解教程</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16541447.html">4.针对win10系统所有版本激活工具</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16381064.html">5.One or more values in the INSERT statement, UPDATE statement, or foreign key update caused by a DELETE statement are not valid because the primary key, SQLCODE=-803, SQLSTATE=23505, DRIVER=4.21.29</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16485009.html">6.DB2死锁解决办法(SQLCODE=-911, SQLSTATE=40001)</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16088216.html">7.IDEA如何更改javascript版本</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16088166.html">8.idea上没有上传(push)按钮或者下来代码按钮怎么办？</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16088041.html">9.idea如何设置git上传代码时忽略目标文件及文件夹</a>
+
+                </li>
+                <li>
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/p/16077512.html">10.Git如何查看分支和添加并切换分支</a>
+
+                </li>
+    </ul>
+</div>
+
+</div>
+
+<!-- 我的标签 -->
+<div id="sidebar_toptags" class="sidebar-block"><div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/java/">java<span class="tag-count">(16)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/DB2/">DB2<span class="tag-count">(14)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/Oracle/">Oracle<span class="tag-count">(13)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/idea/">idea<span class="tag-count">(9)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/HTML/">HTML<span class="tag-count">(7)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/MySQL/">MySQL<span class="tag-count">(5)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/Git/">Git<span class="tag-count">(5)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具<span class="tag-count">(4)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/SQL/">SQL<span class="tag-count">(4)</span></a>
+        </li>
+        <li>
+            <a href="https://www.cnblogs.com/xuyupengblogs/tag/JS/">JS<span class="tag-count">(4)</span></a>
+        </li>
+    <li>
+        <a href="https://www.cnblogs.com/xuyupengblogs/tag/">更多</a>
+    </li>
+
+</ul>
+</div>
+
+</div>
+
+<!-- 积分与排名 -->
+<div id="sidebar_scorerank" class="sidebar-block"><div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	
+69522
+	</li>
+	<li class="liRank">
+		排名 -	
+20389
+	</li>
+</ul>
+</div>
+
+
+
+</div>
+
+<!-- 随笔分类、随笔档案、文章分类、新闻分类、相册、链接 -->
+<div id="sidebar_categories">
+
+    <div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+        <h3 class="catListTitle">
+            
+随笔档案<span class="sidebar-category-item-count">
+    (91)
+</span>
+
+
+        </h3>
+
+        <ul>
+
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/08.html" class="category-item-link" rel="" target="">2022年8月(4)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/07.html" class="category-item-link" rel="" target="">2022年7月(2)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/04.html" class="category-item-link" rel="" target="">2022年4月(4)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/03.html" class="category-item-link" rel="" target="">2022年3月(5)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/02.html" class="category-item-link" rel="" target="">2022年2月(1)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2022/01.html" class="category-item-link" rel="" target="">2022年1月(4)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/12.html" class="category-item-link" rel="" target="">2021年12月(2)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/11.html" class="category-item-link" rel="" target="">2021年11月(3)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/09.html" class="category-item-link" rel="" target="">2021年9月(5)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/08.html" class="category-item-link" rel="" target="">2021年8月(5)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/07.html" class="category-item-link" rel="" target="">2021年7月(8)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/06.html" class="category-item-link" rel="" target="">2021年6月(16)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/05.html" class="category-item-link" rel="" target="">2021年5月(11)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/04.html" class="category-item-link" rel="" target="">2021年4月(5)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2021/03.html" class="category-item-link" rel="" target="">2021年3月(3)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2020/07.html" class="category-item-link" rel="" target="">2020年7月(12)</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/xuyupengblogs/archive/2020/05.html" class="category-item-link" rel="" target="">2020年5月(1)</a>
+ 
+                </li>                
+            
+        </ul>
+
+
+    </div>    
+</div>
+
+<!-- 最新评论 -->
+<!-- 阅读排行榜 -->
+<div id="sidebar_topviewedposts" class="sidebar-block"><div class="catListView">
+    <h3 class="catListTitle">
+        <a href="https://www.cnblogs.com/xuyupengblogs/most-viewed" class="sidebar-card-title-a">
+    阅读排行榜
+</a>
+
+    </h3>
+    <div id="TopViewPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/xuyupengblogs/p/13232278.html">
+                            1. Dependency 'org.springframework.boot:spring-boot-devtools:&lt;unknown&gt;' not found less... (Ctrl+F1)  Inspection info: Inspects a Maven model for resolution problems.(4471)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/xuyupengblogs/p/13068786.html">
+                            2. 如何用电脑把文件刻录到光盘当中（前提电脑带光驱）(3845)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/xuyupengblogs/p/14721737.html">
+                            3. 如何将Oracle数据库表中的数据导入到另一个表里(3702)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/xuyupengblogs/p/16550951.html">
+                            4. Couldn't check the working tree for unmerged files because of an error. detected dubious ownership in repository at 'C:/Java/IdeaProjects/bsirip-ir00' To add an exception for this directory(2888)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/xuyupengblogs/p/15897221.html">
+                            5. SQL 错误 [42601]: An unexpected token ")" was found following "MOUNT4    FROM TEMP3".  Expected tokens may include:  ")".. SQLCODE=-104, SQLSTATE=42601, DRIVER=4.21.29(2837)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div></div>
+
+<!-- 评论排行榜 -->
+<div id="sidebar_topcommentedposts" class="sidebar-block"></div>
+
+<!-- 推荐排行榜 -->
+<div id="sidebar_topdiggedposts" class="sidebar-block">
+<div id="topdigg_posts_wrap">
+    <div class="catListView">
+        <h3 class="catListTitle">
+            <a href="https://www.cnblogs.com/xuyupengblogs/most-liked" class="sidebar-card-title-a">推荐排行榜</a>
+
+        </h3>
+        <div id="TopDiggPostsBlock">
+            <ul style="word-break: break-all">
+                        <li>
+                            <a href="https://www.cnblogs.com/xuyupengblogs/p/15953700.html">
+                                1. DB2 设置列的类型、缺省值（默认值）、非空等(1)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/xuyupengblogs/p/15176729.html">
+                                2. js中如何获取星期几的写法(1)
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+</div></div><div id="sidebar_recentcomments" class="sidebar-block"></div>
+
+
+</div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer"> <div class="footer-image" id="footerStyle1" style="display:none"></div> <footer id="footerStyle2" style=""> <footer-background> <figure class="clouds" style="background: url(&quot;https://cdn.cnblogs.com/jsDelivr/gh/BNDong/Cnblogs-Theme-SimpleMemory@v2.0.2/dist/images/0ff63a3006d8a2821be2.webp&quot;) repeat-x;"></figure> <figure class="background" style="background: url(&quot;https://cdn.cnblogs.com/jsDelivr/gh/BNDong/Cnblogs-Theme-SimpleMemory@v2.0.2/dist/images/af2701cbb4196bedb254.webp&quot;) repeat-x;"></figure> <figure class="foreground" style="background: url(&quot;https://cdn.cnblogs.com/jsDelivr/gh/BNDong/Cnblogs-Theme-SimpleMemory@v2.0.2/dist/images/30b4f3f93333bef2cf56.webp&quot;) repeat-x;"></figure> </footer-background> </footer> <div class="footer-box"> <div class="footer-text" style="display: none; padding-bottom: 0px; border-bottom: none; margin-bottom: 0px;"> [ ##textLeft## <span class="footer-text-icon"> <span class="iconfont ##iconFont##" style="color:##iconColor##;font-size:##iconSize##"></span> </span> ##textRight## ] </div> <div> <span id="blogRunTimeSpan">This blog has running : 657 d 9 h 20 m 31 s</span> <span class="my-face">ღゝ◡╹)ノ♡</span> </div> <div id="linksHtml" style="display:none">##linksHtml##</div> <div id="cnzzInfo" style="display:none"> <div id="cnzzProtocol" style="display:none"> <span class="id_cnzz_stat_icon" id="cnzz_stat_icon_##cnzzId##"></span> <script src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/z_stat.php"></script> </div> ##cnzzHtml## </div> <div>
+		
+Copyright © 2022 Hello小码
+Powered by .NET 6 on Kubernetes
+
+
+
+	</div> </div></div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+
+<div id="page_end_html">
+
+<script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("❤(*^▽^*)❤","爱你❤","❤棒棒哒❤","❤小舞❤","❤小三❤","❤小奥❤","❤荣荣❤","❤除了春天、爱情和樱花❤","❤your name❤","❤少女的少年❤","❤(๑′ᴗ‵๑)Ｉ Lᵒᵛᵉᵧₒᵤ❤","❤rain❤","❤snow❤","❤离别初体验❤");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        3000,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+
+<script>
+!function(){
+ 
+ function n(n,e,t){
+ 
+ return n.getAttribute(e)||t
+ 
+ }
+ 
+ function e(n){
+ 
+ return document.getElementsByTagName(n)
+ 
+ }
+ 
+ function t(){
+ 
+ var t=e("script"),o=t.length,i=t[o-1];
+ 
+ return{
+ 
+ l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)
+ 
+ }
+ 
+ }
+ 
+ function o(){
+ 
+ a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,
+ 
+ c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight
+ 
+ }
+ 
+ function i(){
+ 
+ r.clearRect(0,0,a,c);
+ 
+ var n,e,t,o,m,l;
+ 
+ s.forEach(function(i,x){
+ 
+ for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],
+ 
+ null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,
+ 
+ l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),
+ 
+ t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))
+ 
+ }),
+
+ x(i)
+ 
+ }
+ 
+ var a,c,u,m=document.createElement("canvas"),
+ 
+ d=t(),l="c_n"+d.l,r=m.getContext("2d-disabled"),
+x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||
+ 
+ function(n){
+
+ window.setTimeout(n,1e3/45)
+ 
+ },
+ 
+ w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.onresize=o,
+ 
+ window.onmousemove=function(n){
+ 
+ n=n||window.event,y.x=n.clientX,y.y=n.clientY
+ 
+ },
+ 
+ window.onmouseout=function(){
+ 
+ y.x=null,y.y=null
+ 
+ };
+ 
+ for(var s=[],f=0;d.n>f;f++){
+ 
+ var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})
+ 
+ }
+ 
+ u=s.concat([y]),
+ 
+ setTimeout(function(){i()},100)
+ 
+ }();
+ </script>
+
+
+<script type="text/javascript">
+/* 看板娘 */
+L2Dwidget.init();
+</script>
+
+</div><canvas id="c_n13" width="1323" height="678" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
+
+<input type="hidden" id="antiforgery_token" value="CfDJ8NfDHj8mnYFAmPyhfXwJojd6o4jOz0NEYgnM6g3G5NZ8EPMoL6G_xsLmEwZWvD9KFP2oujPqa88iky-5Stb99yBdnec2mWHKBya0BGuuyGVPn7WZQdGyZI8ZWHeUhhx4n4hlexpmsnGm8iryO1wU37I">
+<script async="" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var kv = getGACustom();
+    if (kv) {
+        gtag('set', kv);
+    }
+    gtag('config', 'UA-476124-1');
+</script>
+<script defer="" src="./Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园_files/hm.js.下载"></script>
+
+<script type="text/javascript">
+    window.cnblogsConfig = {
+      info: {
+        name: 'Hello小码', // 用户名
+        startDate: '2021-01-01', // 入园时间，年-月-日。入园时间查看方法：鼠标停留园龄时间上，会显示入园时间
+        avatar: 'https://pic.cnblogs.com/avatar/2039506/20200516145840.png', // 用户头像
+      },
+      title: {
+        onblur: "(,,Ծ‸Ծ,, )用户已离开",
+        onblurTime: 100,
+        focus: 'ᕕ( ⁰ ▽ ⁰ )ᕗ 欢迎回来！',
+      },
+      banner: {
+        titleSource: 'one',
+        home: {
+            background: [
+                "https://pic.netbian.com/uploads/allimg/210426/220238-16194457587967.jpg",
+                "https://pic.netbian.com/uploads/allimg/190909/193615-156802897590a9.jpg",     
+                "http://imgsrc.baidu.com/forum/pic/item/89877a8da977391217547e78f7198618367ae23a.jpg",
+                "https://images.cnblogs.com/cnblogs_com/ywheunji/1579468/o_2002100926526665555832b7586088f.jpg",
+"https://imgsa.baidu.com/forum/w%3D580/sign=4461ad6ba04bd11304cdb73a6aaea488/157357cd7b899e518347730c4fa7d933c9950d62.jpg",
+"https://imgsa.baidu.com/forum/w%3D580/sign=a96178dc16d5ad6eaaf964e2b1ca39a3/e3744d039245d688af45f1bca9c27d1ed31b24e8.jpg",
+"http://bbs.pcbeta.com/data/attachment/forum/201805/16/112919f038ks8es0bez3f7.jpg",
+            ],
+        },
+        article: {
+            background: [
+                 "https://pic.netbian.com/uploads/allimg/210426/220238-16194457587967.jpg",
+                "https://pic.netbian.com/uploads/allimg/190824/212516-15666531161ade.jpg",
+                "https://pic.netbian.com/uploads/allimg/190802/091545-1564708545d082.jpg",
+                "https://pic.netbian.com/uploads/allimg/190909/193615-156802897590a9.jpg",     
+                "http://imgsrc.baidu.com/forum/pic/item/89877a8da977391217547e78f7198618367ae23a.jpg",
+                "https://images.cnblogs.com/cnblogs_com/ywheunji/1579468/o_2002100926526665555832b7586088f.jpg",
+
+            ],
+        },
+      },
+         loading: {
+           rebound: {
+             tension: 16,
+           },
+           spinner: {
+             id: 'spinner',
+             radius: 90,
+           }
+        },
+       footer: {
+         style: 2,
+       },
+      
+      switchDayNight: {
+        enable: true,
+        auto: {
+            enable: true
+         }
+       },
+   }
+</script><script type="text/javascript">getFollowStatus('f59acd4b-59f5-45aa-2e9f-08d7f668ab52');</script><canvas id="bgCanvas" width="1323" height="678" style="display: block; position: fixed; margin: 0px; padding: 0px; border: 0px; outline: 0px; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1;"></canvas></body></html>
