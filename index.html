@@ -5,362 +5,343 @@
     <title>欢迎来到闯荡的小站</title>
 	<link rel="icon" href="data/logo/logo.png" type="image/png" />
 		<style>
-		/* *{
+/* *{
 			 border: hotpink 1px solid;
 		} */
-		a{
-			text-decoration:none;
-			font-size: 3vh;
-		}
-		a:hover, a:visited, a:link, a:active {
-    		color:rgb(0, 0, 0);
-		}
-		
-		body{
-			background-color: #eee;
-			margin: 0;
-		}
-			#big{
-				width:99.4%;
-				height: 99.9vh;
-				display: flex;
-				/*background-color: #eeeeff;*/
-			}
-				#left{
-					width: 20%;
-					height: 100%;
-					z-index: 100;
-					background-color: #eeee88;
-				}
-				#main{
-					width: 100%;
-					z-index: 99;
-					display: flex;
-					flex-direction: column;
-				}
-					#main-top{
-						height: 13%;
-						background-color: #ccffff;
-						display: flex;
-						justify-content: space-evenly;
-					}
-					 #main-top>div{
-						 display: flex;
-						 justify-content: center;
-						 align-items: center;
-						 width: 10%;
-					 }
-					#main-body{
-						width: 100%;
-						height:90%;
-						flex: 1;
-						display: flex;
-						overflow: auto;
-						box-shadow: none;
-					}
-						#main-body-center{
-							width: 75%;
-							height: 100%;
-							box-shadow: none;
-						}
-							#main-body-center>div{
-							background-color: #ccfccf;
-						}
-						#main-body-rigth{
-							flex:1;
-							box-shadow: none;
-						}
-							#main-body-rigth>div{
-								background-color: #ccccff;
-								margin-bottom: 0.8vh;
 
-							}
-		#main-body-center-top{
-			display: flex;
-			height: 20%;
-			align-content: space-around;
-		}
-		.main-body-center-top{
-			width: 25%;
-			margin-right: 0.8vh;
-			background-color: #fee;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-bottom: 0;
-		}
-		.main-body-center-top>h1{
-			color: #6c543b;
-			font-size: 13vh;
-		}
-		@media screen and(orientation: portrait){
-			.main-body-center-top>h1{
-				font-size: 8vw!important;
-			}
-		}
-		.main-body-center-main{
-			height: 20%;
-			box-shadow: none;
-			display: grid;
-			grid-template: 100%/repeat(5,20%) ;
-			justify-content: space-evenly;
-			align-items: center;
-		}
-		.main-body-center-main>a{
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			writing-mode: lr-tb;
-		}
-		.main-body-right-top{
-			height: 30%;
-			font-size: 2.5vh;
-			/* font-size: 8ch!important; */
-		}
-		#main-body-center div{
-			margin-bottom: 0.8vh;
-			
-		}
-		.main-body-right-center{
-			height: 50%;	
-			font-size: 2.5vh!important;
-		}
-		.main-body-right-center *{
-			
-			font-size: 2.5vh!important;
-		}
-		#big div{
-			box-shadow: 0.3vh 0.2vh 0.2vh #888 ;
-		}
-		.mg10{
-			margin: 10px;
-		}
-		.mgl{
-			margin-left: 0.8vh;
-		}
-		.mgt{
-			margin-top: 0.8vh;
-		}
-		.center{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		</style>
+a {
+    text-decoration: none;
+    font-size: 3vh;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    color: rgb(0, 0, 0);
+}
+
+body {
+    background-color: #eee;
+    margin: 0;
+}
+
+#big {
+    width: 99.4%;
+    height: 99.9vh;
+    display: flex;
+    /*background-color: #eeeeff;*/
+}
+
+#left {
+    width: 20%;
+    height: 100%;
+    z-index: 100;
+    background-color: #eeee88;
+}
+
+#main {
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-top {
+    height: 13%;
+    background-color: #ccffff;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#main-top>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+#main-body {
+    width: 100%;
+    height: 90%;
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    box-shadow: none;
+}
+
+#main-body-center {
+    width: 75%;
+    height: 100%;
+    box-shadow: none;
+}
+
+#main-body-center>div {
+    background-color: #ccfccf;
+}
+
+#main-body-rigth {
+    flex: 1;
+    box-shadow: none;
+}
+
+#main-body-rigth>div {
+    background-color: #ccccff;
+    margin-bottom: 0.8vh;
+}
+
+#main-body-center-top {
+    display: flex;
+    height: 20%;
+    align-content: space-around;
+}
+
+.main-body-center-top {
+    width: 25%;
+    margin-right: 0.8vh;
+    background-color: #fee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.main-body-center-top>h1 {
+    color: #6c543b;
+    font-size: 13vh;
+}
+
+@media screen and(orientation: portrait) {
+    .main-body-center-top>h1 {
+        font-size: 8vw!important;
+    }
+}
+
+.main-body-center-main {
+    height: 20%;
+    box-shadow: none;
+    display: grid;
+    grid-template: 100%/repeat(5, 20%);
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-body-center-main>a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    writing-mode: lr-tb;
+}
+
+.main-body-right-top {
+    height: 30%;
+    font-size: 2.5vh;
+    /* font-size: 8ch!important; */
+}
+
+#main-body-center div {
+    margin-bottom: 0.8vh;
+}
+
+.main-body-right-center {
+    height: 50%;
+    font-size: 2.5vh!important;
+	line-height: 3.8vh;
+}
+
+.main-body-right-center * {
+    font-size: 2.5vh!important;
+}
+li b{
+	text-decoration: line-through;
+	color :#353535
+}
+
+#big div {
+    box-shadow: 0.3vh 0.2vh 0.2vh #888;
+}
+
+.mg10 {
+    margin: 10px;
+}
+
+.mgl {
+    margin-left: 0.8vh;
+}
+
+.mgt {
+    margin-top: 0.8vh;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+</style>
 </head>
 <body>
-	<div id="big">
+    <div id="big">
 
-		<div id="left"><!-- 侧边栏 -->
+        <div id="left">
+            <!-- 侧边栏 -->
 
-		</div>
+        </div>
 
-		<div id="main"><!-- 主区域 -->
+        <div id="main">
+            <!-- 主区域 -->
 
-			<div id="main-top">
-				<div style="box-shadow: none;"><a href="star/index.html">星空</a></div>
-				<div style="box-shadow: none;"><a href="data/audioGame/1/index.html">音游</a></div>
-				<div style="box-shadow: none;"><a href="data/wallpaper/index.html">找壁纸</a></div>
-				<!-- <div style="box-shadow: none;"><a href="data/music/index.php">听音乐</a></div> -->
-				<div style="box-shadow: none;"><a href="data\homepage\index.html">主页页面</a></div>
-				<div style="box-shadow: none;"><a href="data\birthday\index.html">生日快乐</a></div>
-			</div><!-- top -->
-			<div id="main-body" class="mgl mgt"><!-- main -->
+            <div id="main-top">
+                <div style="box-shadow: none;"><a href="star/index.html">星空</a></div>
+                <div style="box-shadow: none;"><a href="data/audioGame/1/index.html">音游</a></div>
+                <div style="box-shadow: none;"><a href="data/wallpaper/index.html">找壁纸</a></div>
+                <!-- <div style="box-shadow: none;"><a href="data/music/index.php">听音乐</a></div> -->
+                <div style="box-shadow: none;"><a href="data\homepage\index.html">主页页面</a></div>
+                <div style="box-shadow: none;"><a href="data\birthday\index.html">生日快乐</a></div>
+            </div>
+            <!-- top -->
+            <div id="main-body" class="mgl mgt">
+                <!-- main -->
 
-				<div id="main-body-center">
+                <div id="main-body-center">
 
-					<div id="main-body-center-top">
+                    <div id="main-body-center-top">
 
-						<div class="main-body-center-top" style="margin-bottom: 0;">
-							<h1>闯</h1>
-						</div>
-						<div class="main-body-center-top" style="margin-bottom: 0;">
-							<h1>荡</h1>
-						</div>
-						<div class="main-body-center-top" style="margin-bottom: 0;">
-							<h1>之</h1>
-						</div>
-						<div class="main-body-center-top" style="margin:0">
-							<h1>者</h1>
-						</div>
-					</div>
-					<div class="main-body-center-main">
-						<a href="data/home/binding/binding.html">绑定</a>
-						<a href="data/home/binding/axios.html">获取</a>
-						<a href="data/home/slider/one.html">滑块</a>
-						<a href="data/home/slider/two.html">切换图片</a>
-						<a href="data/home/slider/three.html">单击返回</a>
-					</div>
-					<div class="main-body-center-main">
-						<a href="data/home/mitt/index.html">传值</a>
-						<a href="data/home/login/index.html">登录</a>
-					</div>
-					<div class="main-body-center-main"></div>
-					<div class="main-body-center-main"></div>
-					<div class="main-body-center-main"></div>
-					<div class="main-body-center-main"></div>
-					<div class="main-body-center-main"></div>
+                        <div class="main-body-center-top" style="margin-bottom: 0;">
+                            <h1>闯</h1>
+                        </div>
+                        <div class="main-body-center-top" style="margin-bottom: 0;">
+                            <h1>荡</h1>
+                        </div>
+                        <div class="main-body-center-top" style="margin-bottom: 0;">
+                            <h1>之</h1>
+                        </div>
+                        <div class="main-body-center-top" style="margin:0">
+                            <h1>者</h1>
+                        </div>
+                    </div>
+                    <div class="main-body-center-main">
+                        <a href="data/home/binding/binding.html">绑定</a>
+                        <a href="data/home/binding/axios.html">获取</a>
+                        <a href="data/home/slider/one.html">滑块</a>
+                        <a href="data/home/slider/two.html">切换图片</a>
+                        <a href="data/home/slider/three.html">单击返回</a>
+                    </div>
+                    <div class="main-body-center-main">
+                        <a href="data/home/mitt/index.html">传值</a>
+                        <a href="data/home/login/index.html">登录</a>
+                    </div>
+                    <div class="main-body-center-main"></div>
+                    <div class="main-body-center-main"></div>
+                    <div class="main-body-center-main"></div>
+                    <div class="main-body-center-main"></div>
+                    <div class="main-body-center-main"></div>
 
-				</div>
-				<div id="main-body-rigth" class="mgl">
-					<div class="main-body-right-top">
-						<b>git命令：</b>
-						<ol>
-							<li>git clone "仓库地址" 克隆</li>
-							<li>git add . 添加文件</li>
-							<li>git commit -m “说明” </li>
-							<li>git push 上传</li>
-						</ol>
-					</div>
-					<div class="main-body-right-center">
-						<b><a href="data/Vue/Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园.html target="_blank">Vue环境搭建教程：</a></b>
-						<ol>
-							<li><a href="http://nodejs.p2hp.com/" target="_blank">下载Node.js</a></li>
-							<li>npm install -g vue-cli &nbsp;||&nbsp;npm -v</li>
-							<li>npm install -g cnpm --registry=https://registry.npm.taobao.org</li>
-							<li>cnpm install -g vue-cli &nbsp;||&nbsp;vue</li>
-							<li>vue init webpack vue-demo</li>
-							<li>cnpm run dev</li>
-						</ol>
-					</div>
-					<div class="main-body-right-top"></div>
-					<div class="main-body-right-center"></div>
-				</div>
+                </div>
+                <div id="main-body-rigth" class="mgl">
+                    <div class="main-body-right-top">
+                        <b>git命令：</b>
+                        <ol>
+                            <li>git clone "仓库地址" 克隆</li>
+                            <li>git add . 添加文件</li>
+                            <li>git commit -m “说明” </li>
+                            <li>git push 上传</li>
+                        </ol>
+                    </div>
+                    <div class="main-body-right-center">
+                        <b><a href="data/Vue/Vue环境搭建以及相关工具安装（超详细）步骤 - Hello小码 - 博客园.html target="_blank">Vue环境搭建教程：</a></b>
+                        <ol>
+                            <li><a href="http://nodejs.p2hp.com/" target="_blank">下载Node.js</a></li>
+                            <li>$npm install -g vue-cli &nbsp;||&nbsp;<b>npm -v</b></li>
+                            <li>$npm install -g cnpm --registry=https://registry.npm.taobao.org</li>
+                            <li>$cnpm install -g vue-cli &nbsp;||&nbsp;<b>vue</b></li>
+                            <li><b>win+x 打开</b>&nbsp;||&nbsp;$set-ExecutionPolicy RemoteSigned</li>
+                            <li>$vue init webpack vue-demo</li>
+                            <li>$cnpm run dev</li>
+                        </ol>
+                    </div>
+                    <div class="main-body-right-top"></div>
+                    <div class="main-body-right-center"></div>
+                </div>
 
-			</div>
+            </div>
 
-			<div>
+            <div>
 
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 
 </body>
-<style>
+<style>.taiji-icon {
+    width: 96px;
+    height: 40.8vh;
+    margin: 20px 20px;
+    float: left;
+    background-color: #ffffff;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+}
 
-	.taiji-icon{
+.taiji-icon:before {
+    width: 12.5%;
+    height: 25%;
+    top: 50%;
+    left: 0;
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    border: 10.8vh solid #000000;
+    border-radius: 100%;
+}
 
-		width: 96px;
+.taiji-icon:after {
+    width: 12.5%;
+    height: 25%;
+    top: 50%;
+    left: 50%;
+    background-color: #000000;
+    border: 10.8vh solid #ffffff;
+    border-radius: 100%;
+    content: "";
+    position: absolute;
+}
 
-		height: 40.8vh;
+.star {
+    margin: 50px;
+    position: relative;
+    width: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid yellowgreen;
+    border-left: 100px solid transparent;
+    transform: rotate(35deg)scale(.6);
+}
 
-		margin: 20px 20px;
+.star:before {
+    content: '';
+    position: absolute;
+    border-bottom: 80px solid yellowgreen;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    top: -45px;
+    left: -65px;
+    transform: rotate(-35deg);
+}
 
-		float: left;
+.star:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: -105px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid yellowgreen;
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+}
 
-		background-color: #ffffff;
-
-		border-color: #000000;
-
-		border-style: solid;
-
-		border-width: 2px 2px 50px 2px;
-
-		border-radius: 100%;
-
-		position: relative;
-
-	}
-
-	.taiji-icon:before {
-
-		width: 12.5%;
-
-		height: 25%;
-
-		top: 50%;
-
-		left: 0;
-
-		content: "";
-
-		position: absolute;
-
-		background-color: #ffffff;
-
-		border: 10.8vh solid #000000;
-
-		border-radius: 100%;
-
-	}
-
-	.taiji-icon:after {
-
-		width: 12.5%;
-
-		height: 25%;
-
-		top: 50%;
-
-		left: 50%;
-
-		background-color: #000000;
-
-		border: 10.8vh solid #ffffff;
-
-		border-radius:100%;
-
-		content: "";
-
-		position: absolute;
-
-	}
-	.star{
-
-		margin: 50px;
-
-		position: relative;
-
-		width: 0;
-
-		border-right: 100px solid transparent;
-
-		border-bottom: 70px solid yellowgreen;
-
-		border-left: 100px solid transparent;
-
-		transform: rotate(35deg)scale(.6);
-
-	}
-
-	.star:before{
-
-		content: '';
-
-		position: absolute;
-
-		border-bottom: 80px solid yellowgreen;
-
-		border-left: 30px solid transparent;
-
-		border-right: 30px solid transparent;
-
-		top: -45px;
-
-		left: -65px;
-
-		transform: rotate(-35deg);
-
-	}
-
-	.star:after{
-
-		content: '';
-
-		position: absolute;
-
-		top: 3px;
-
-		left: -105px;
-
-		border-right: 100px solid transparent;
-
-		border-bottom: 70px solid yellowgreen;
-
-		border-left: 100px solid transparent;
-
-		transform: rotate(-70deg);
-
-	}
 </style>
 </html>
