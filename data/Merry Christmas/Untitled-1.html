@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>大雪纷飞</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            background: url("images/bg.jpg") no-repeat center center;
+            background-size: cover;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="main"></canvas>
+</body>
+<script>
+    window.onload = function(){
+        var canvas = document.getElementById("main");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var context = canvas.getContext('2d');
+        document.body.appendChild(canvas);
+
+        var snowNum = 2000;
+        var particles = [];
+        var snowImg = function drawPic() {
+    canvas.width = 20;
+    canvas.height = 20;
+    var grd = context.createRadialGradient(10, 10, 1, 10, 10, 10);
+    grd.addColorStop(0, 'white');
+    grd.addColorStop(1, 'rgba(255,255,255,0)');
+    context.fillStyle = grd;
+    context.fillRect(0, 0, canvas.width, canvas.height);
+}
+        // snowImg.src = "images/snow_1.png";
+        snowImg.onload = function() {
+            init();
+        }
+        var groundStart = window.innerHeight*0.6;
+        function Particle3D() {
+            this.x = Math.random() * 2000 - 1000;
+            this.y = Math.random() * 2000 - 1000;
+            this.z = Math.random() * 1000 - 1000;
+            this.vx = Math.random()*1-1;
+            this.vy = Math.random()*1+1;
+            this.vz = Math.random()*1-2;
+            this.width = snowImg.width;
+            this.height = snowImg.height;
+            this.scale = (this.z + 1000)/2000;
+            this.max = groundStart + window.innerHeight*this.scale;
+            this.update = function() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.z += this.vz;
+                this.scale = (this.z + 1000)/2000;
+                this.max = groundStart + window.innerHeight*this.scale;
+            }
+            this.draw = function(ctx) {
+                var centerX= this.x+this.width/2;
+                var centerY= this.y+this.height/2;
+                var width = this.width*this.scale;
+                var height = width;//this.height*this.scale;
+                var x = centerX - width/2;
+                var y = centerY - height/2;
+                if(width>=1) {
+                    ctx.drawImage(snowImg,x,y,width,height);
+                }
+            }
+        }
+        function init() {
+            for(var i=0;i<snowNum;i++) {
+                var dot = new Particle3D();
+                particles.push(dot);
+                dot.draw(context);
+            }
+            requestAnimationFrame(loop);
+        }
+        function loop() {
+            context.clearRect(0,0,canvas.width,canvas.height);
+            for (var i = 0; i < particles.length; i++) {
+                var dot = particles[i];
+                dot.update();
+                with (dot) {
+                    if (y >=dot.max) {
+                        y -= 2000
+                    }
+                    if (x > 1000) {
+                        x -= 2000
+                    } else if (x < -1000) {
+                        x += 2000
+                    }
+                    if (z < -1000) {
+                        z += 1000
+                    }
+                }
+                dot.draw(context);
+            }
+            requestAnimationFrame(loop);
+        }
+    };
+</script>
+</html>
