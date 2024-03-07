@@ -1,12 +1,13 @@
-<!-- 小刀娱乐网交：www.xiaodao.biz 流学习QQ群：595526 -->
 <!DOCTYPE html>
 <html lang="en">
 
 	<head>
 		<link rel="icon" href="../logo/logo.png" type="image/png" />
+
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-		<title>古趣生活  | 一个热爱生活的咸鱼 - 古趣生活</title>
+		<title>欢迎来到闯荡的小站</title>
+		<link rel="icon" href="../../data/logo/logo.png" type="image/png" />
 		<meta name="description" content="喜欢计算机的咸鱼一条，经常抽出空余时间学习各种语言编程以及知识，虽然懂得不多，但是这是我最喜欢的爱好吧。同时也喜欢各种游戏，FPS我的强项！沉浸在这个完美的虚拟世界，起码能暂时忘掉这充满回忆该死的现实.">
 		<meta name="keywords" content="畅玩,主页,博客,tqy,xhj">
 		<link rel="stylesheet" href="css/animate.compat.css" />
@@ -46,10 +47,10 @@
 		th,
 		td {
 			border: none;
-			font-family: "微软雅黑", "黑体", "宋体";
+			font-family: "微软雅黑", "黑体", "宋体",serif;
 			font-size: 14px;
-			margin: 0px;
-			padding: 0px;
+			margin: 0;
+			padding: 0;
 		}
 
 		html,
@@ -292,7 +293,7 @@
 	<!--轮播css-->
 	<style type="text/css">
 		@charset "utf-8";
-	
+
 		#certify {
 			position: relative;
 			width: 100%;
@@ -393,13 +394,14 @@
 		<div id="box">
    
   <!--头像部分div-->
+
 			<div id="boox" class="animated swing">
-				<img class="touxiang" src="image/me.png">
-				<p class="title animated bounceInLeft">古趣生活</p>
-				<p class="lizhi">实时分享热门幻竹云网络科技。</p>
+				<a href="../../index.html"><img class="touxiang" src="../logo/logo.png"></a>
+				<p class="title animated bounceInLeft">闯荡之者</p>
+				<p class="lizhi">-----------</p>
 			
 			</div>
-	
+
 			<!--轮播html-->
 			<div id="certify">
 				<div class="swiper-container">
@@ -470,7 +472,7 @@
 
 		<!-- 页脚 -->
 		<div id="footer">
-			<p>© 2022  | <a href="http://beian.miit.gov.cn">粤ICP备2021176129号</a></p>
+<!--			<p>© 2022  | <a href="http://beian.miit.gov.cn">粤ICP备2021176129号</a></p>-->
 		<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280970358'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1280970358%26online%3D2' type='text/javascript'%3E%3C/script%3E"));</script>
 			<br><br><br>
 		</div>
@@ -490,7 +492,7 @@
 							<span class="artist">Artist</span>
 						</div>
 						<div class="progress">
-							<div class="timer left">0:11</div>
+							<div class="timer left">3:24</div>
 							<div class="contr">
 								<div class="rewind icon"></div>
 								<div class="playback icon"></div>
@@ -510,14 +512,14 @@
 		</div>
 		<div id="if-gg"></div>
 		<!--音乐播放器结束-->
-
+		<audio src="../../datas/music/杨洋-微微一笑很倾城.mp3"></audio>
 		<!--花瓣飘落-->
 		<div style="height:100%; width:100%;display: none;">花瓣飘落</div>
 		<script src="js/snowfall.jquery.js"></script>
 		<script>
 			$(document).snowfall('clear');
 			$(document).snowfall({
-				image: "https://pic.kuaizhan.com/g3/c3/9b/3f72-60cf-4d91-8500-4f193c67c59205",
+				image: "image/huaBan.png",
 				flakeCount: 10,
 				minSize: 5,
 				maxSize: 22
@@ -529,10 +531,10 @@
 <!--播放器添加歌曲js-->
 		<script>
 		var playlist = [{
-			title: "抖音神曲",
-			artist: "Remix",
-			mp3: "http://www.zry1.cn/1.mp3",
-			cover: "http://www.zry1.cn/image/me.png?param=130y130",
+			title: "微微一笑很倾城",
+			artist: "杨洋",
+			mp3: "../../datas/music/杨洋-微微一笑很倾城.mp3",
+			cover: "image/weiweiyixiaohenqingcheng.webp",
 		}, ];
 		var isRotate = true;
 		var autoplay = false;
