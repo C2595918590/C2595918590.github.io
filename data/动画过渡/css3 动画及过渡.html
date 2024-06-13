@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>css3</title>
+	<style type="text/css">
+/*		transition: <property> <duration> <animation type> <delay>*/
+		.big>div{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			width: 100px;height: 100px;
+
+			border: hotpink 1px solid;
+			border-radius: 20%;
+			box-shadow: 2px 2px 1px #888888;
+			background-color:#cff;
+			transition: ease-in-out 0.3s;
+			
+		}
+		
+		.big{
+				width:100%;height:150px;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				background-color:#BDFCC9;
+			 	transition:1s ease-in-out;
+			
+				
+		}
+		.big:hover{
+			background-color: #00FF0F;
+			border-radius: 25px ;
+		}
+		#one{
+			background-color: #FF983B;
+			border: 1px #FA6700;
+		}
+		#mi{
+			color: aliceblue;
+			font-size: 45px;
+		}
+		#one:hover{
+			transform: rotate(45deg);
+		}
+		.two:hover{
+			transform: rotateX(45deg);
+		}
+		.there:hover{
+			transform: rotateY(45deg);
+		}
+		.four:hover{
+			transform: scale(2);
+		}
+		.five:hover{
+			transform: scaleX(2);
+		}
+		.six:hover{
+			transform: scaleY(2);
+		}
+		.seven:hover{
+			transform: rotateZ(45deg);
+		}
+		.eight:hover{
+			transform: skew(30deg,10deg); 
+		}
+		.nine:hover{
+			transform: skewX(45deg);	
+		}
+		.ten:hover{
+			transform: skewY(45deg);
+		}
+		.eleven:hover{
+			transform: translateY(45px);
+		}
+		.twelve:hover{
+			transform: translateX(45px);
+		}
+		.thirteen:hover{
+			transform-origin:100% 0 0;
+			transform:rotate(45deg);
+		}
+		.fourteen:hover{
+			transform: matrix(1,1,0,1,45,0);
+		}
+		.fiftten:hover{
+			transform: matrix3d(2,2,45,2,
+								2,2,45,2,
+								2,2,45,2,
+								2,0,45,0);
+		}
+		
+		
+	</style>
+</head>
+<body>
+		<div class="big">
+    		<div id="one"><p id="mi">mi</p></div>
+    		<div class="two">伟</div>
+    		<div class="there">龙</div>
+    		<div class="four">4</div>
+    		<div class="five">5</div>
+    		<div class="six">6</div>
+		</div>
+		<div class="big">
+    		<div class="seven">7</div>
+    		<div class="eight">8</div>
+    		<div class="nine">9</div>
+    		<div class="ten">10</div>
+    		<div class="eleven">11</div>
+    		<div class="twelve">12</div>
+		</div>
+		<div class="big">
+    		<div class="thirteen">13</div>
+    		<div class="fourteen">14</div>
+    		<div class="fifteen">15</div>
+    		<div class="sixteen">16</div>
+    		<div class="seventeen">17</div>
+    		<div class="eighteen">18</div>
+		</div>
+
+
+
+
+
+
+
+
+</body>
+<!--
+<script type="text/javascript">
+	function f(name){
+		console.log(name+'z');
+	}
+	f('a');
+	function zzj(name){
+		if (name==="苹果") {
+			console.log(name+'汁');
+		}else{
+			console.log('苹果专用，其他勿扰。')
+		}
+	}
+	zzj('是为了');
+</script>
+-->
+</html>

@@ -13,7 +13,19 @@
 a {
     text-decoration: none;
     font-size: 3vh;
+    transition: .5s .2s ;
+    
 }
+a:hover{
+    transform: scale(1.5);
+    transform: rotate(360deg);
+    font-weight: bold;
+    text-shadow: 0px 0px 50px #888;
+    
+    
+}
+
+
 
 a:hover,
 a:visited,
@@ -39,6 +51,8 @@ body {
     height: 100%;
     z-index: 100;
     background-color: #eeee88;
+
+
 }
 
 #main {
@@ -110,12 +124,25 @@ body {
 .main-body-center-top>h1 {
     color: #6c543b;
     font-size: 13vh;
+    transform: rotate(-0deg);
+    transition: 1s .2s;
+    
+}
+h1:hover {
+    transform: rotate(54turn);
+    color: red;
+    transition-delay: 1s;
+    transition-property: all;
+    transition-duration: 9s;
+    transition-timing-function: cubic-bezier(.34,0,.84,1);
+    text-shadow: 0px 0px 50px red,-5px -5px rgba(225,255,245,.5);
 }
 
 @media screen and(orientation: portrait) {
     .main-body-center-top>h1 {
         font-size: 8vw!important;
     }
+    
 }
 
 .main-body-center-main {
@@ -179,6 +206,32 @@ li b{
     justify-content: center;
     align-items: center;
 }
+#footer{
+    
+    border: 1px hotpink solid ;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    justify-content: center;
+    background-color: #eeee88;
+    margin-bottom: 1vh;
+}
+#footer a,#footer>p{
+    font-size: 2vh;
+}
+
+
+
+
+/* 添加针对移动端的媒体查询 */
+@media screen and (max-width: 600px) {
+    .main-body-center-top>h1 {
+        font-size: 18px; /* 在小屏幕上进一步减小字体大小 */
+    }
+}
+
+/* 其他样式保持不变 */
 
 </style>
 </head>
@@ -187,7 +240,7 @@ li b{
 
         <div id="left">
             <!-- 侧边栏 -->
-
+            <p></p>
         </div>
 
         <div id="main">
@@ -197,10 +250,10 @@ li b{
                 <div style="box-shadow: none;"><a href="star/index.html">星空</a></div>
                 <div style="box-shadow: none;"><a href="data/audioGame/1/index.html">音游</a></div>
                 <div style="box-shadow: none;"><a href="data/evolve/index.html">生存进化</a></div>
-                <!-- <div style="box-shadow: none;"><a href="data/music/index.php">听音乐</a></div> -->
-                <div style="box-shadow: none;"><a href="data/zhizhu/index.html">阴暗爬行</a></div>
+                 <div style="box-shadow: none;"><a href="data/music/index.php">听音乐</a></div> 
+                
                 <div style="box-shadow: none;"><a href="data/star-3D/index.html">3D星系</a></div>
-                <div style="box-shadow: none;"><a href="data/birthdays/index.html">生日快乐</a></div>
+                <div style="box-shadow: none;"><a href="http://闯荡之者.fun:81/">闯荡影视</a></div>
             </div>
             <!-- top -->
             <div id="main-body" class="mgl mgt">
@@ -233,6 +286,9 @@ li b{
                     <div class="main-body-center-main">
                         <a href="data/home/mitt/index.html">传值</a>
                         <a href="data/home/login/index.html">登录</a>
+                        <a href="data/zhizhu/index.html">阴暗爬行</a>
+                        <a href="data/3d/index.html">立方体</a>
+                        <a href="data/动画过渡/css3 动画及过渡.html">动画过渡</a>
                     </div>
                     <div class="main-body-center-main"></div>
                     <div class="main-body-center-main"></div>
@@ -273,6 +329,12 @@ li b{
 
             </div>
         </div>
+        
+    </div>
+    <div id="footer">
+        <p>闯荡之者的小站 <a herf="https://beian.miit.gov.cn">
+晋ICP备2024041332号</a>
+        </p>
     </div>
 
 </body>
