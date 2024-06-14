@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="5c456ee0-77a7-41ad-aecb-77cbefb12aec" name="闯荡之者.fun" url="http://8.130.167.181">
+        <fileTransfer host="8.130.167.181" port="20">
+          <advancedOptions>
+            <advancedOptions compatibilityMode="true" dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

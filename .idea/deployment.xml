@@ -3,6 +3,13 @@
   <component name="PublishConfigData" autoUpload="Always" serverName="阿里云" confirmBeforeUploading="false" showDifferentInSync="false" showNewOnSourceInSync="false" showNewOnTargetInSync="false">
     <option name="confirmBeforeUploading" value="false" />
     <serverData>
+      <paths name="闯荡之者.fun">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="阿里云">
         <serverdata>
           <mappings>

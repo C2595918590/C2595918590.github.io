@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转的八卦</title>
+</head>
+<style>
+/* *{
+  border:1px solid hotpink;
+} */
+.fc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body{
+
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: grid;
+  grid-template: repeat(3,33.3%)/repeat(3,33.3%);
+  animation: zhuan 8s  infinite .5s reverse linear;
+  /* transition: all; */
+}
+#app:hover,#bpp{
+  animation-play-state:paused;
+/* animation: zhuan 3s infinite .5s linear; */
+
+}
+.gua{
+  width: 100px;
+  height: 100px;
+  display: grid;
+  gap: 10px;
+  grid-template: repeat(3,27%)/repeat(2,45%);
+}
+#app div{
+  position: relative;
+}
+.gua:nth-child(3),.gua:nth-child(7){
+  transform: rotate(45deg);
+}
+.gua:nth-child(1),.gua:nth-child(9){
+  transform: rotate(-45deg);
+}
+.gua:nth-child(4),.gua:nth-child(6){
+  transform: rotate(-90deg);
+} 
+
+.gua:nth-child(2){
+
+  bottom: 100px;
+  }
+.gua:nth-child(4){
+
+  right: 100px;
+  }
+  .gua:nth-child(6){
+
+  left: 100px;
+  }
+  .gua:nth-child(8){
+
+  top: 100px;
+  } 
+  .gua:nth-child(1){
+    bottom: 45px;
+    right: 45px;
+  }
+  .gua:nth-child(3){
+    bottom: 45px;
+    right: -45px;
+  }
+  .gua:nth-child(7){
+    bottom: -45px;
+    right: 45px;
+  }
+  .gua:nth-child(9){
+    bottom: -45px;
+    right: -45px;
+  }
+.gua>div{
+  background-color: black;
+}
+.qian>div:nth-child(1),.qian>div:nth-child(2),.qian>div:nth-child(3){
+  grid-column:span 2;
+}
+.kan>div:nth-child(3){
+  grid-column:span 2;
+}
+.gen>div:nth-child(5){
+  grid-column:span 2;
+}
+.zhen>div:nth-child(5){
+  grid-column:span 2;
+}
+.xun>div:nth-child(1),.xun>div:nth-child(2){
+  grid-column:span 2;
+}
+.li>div:nth-child(1),.li>div:nth-child(4){
+grid-column:span 2;
+}
+/* .kun>div:nth-child(){
+  
+} */
+.dui>div:nth-child(1),.dui>div:nth-child(2){
+  grid-column:span 2;
+}
+ 
+#bpp{
+  position: relative;
+  bottom: 25px;
+  right: 25px; 
+  width: 145px;
+  height: 145px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to bottom, black 50%, white 50%);
+  z-index: 0;
+  animation: zhuan 4s  infinite 1s linear; 
+ 
+}
+#bpp:hover,.cpp:hover{
+  animation-play-state:paused;
+  /* animation: zhuan 1s infinite 1s alternate linear;  */
+  /* animation-play-state:running; */
+}
+
+@keyframes zhuan{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+     transform: rotate(360deg);
+  }
+} 
+
+.bai{
+
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  z-index: 1;
+  background-color: white;
+  
+}
+.hei{
+
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  background-color: black;
+  z-index: 1;
+}
+.small-bai{
+  width: 30%;
+  height: 30%;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 2;
+}
+.small-hei{
+  width: 30%;
+  height: 30%;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 2;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.cpp{
+  /* position: relative;
+  bottom: 25px;
+  right: 25px;  */
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to bottom, black 50%, white 50%);
+  z-index: 0;
+  animation: zhuan 4s  infinite 1s linear; 
+ 
+}
+
+</style>
+
+<body class="fc">
+  <div id="app">
+    <div class="gua xun">
+      <div></div>
+        <div></div>
+      <div></div>
+        <div></div>
+      <div></div>
+        <div></div>
+    </div>
+
+    <div class="gua li">
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+
+    <div class="gua kun">
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+
+    <div class="gua zhen">
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+
+    <div id="bpp">
+    <div class="bai flex-center" >
+      <div class="small-hei">
+        <div class="cpp">
+        <div class="bai flex-center" >
+          <div class="small-hei"></div>
+        </div>
+        <div class="hei flex-center">
+          <div class="small-bai"></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="hei flex-center">
+      <div class="small-bai"> <div class="cpp" style="border:1px solid white;">
+    <div class="bai flex-center" >
+      <div class="small-hei"></div>
+    </div>
+    <div class="hei flex-center">
+      <div class="small-bai"></div>
+    </div>
+  </div></div>
+    </div>
+  </div>
+
+     <div class="gua dui">
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+
+    <div class="gua gen">
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+
+    <div class="gua kan">
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+
+    <div class="gua qian">
+      <div></div>
+      <div></div>
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+</div>
+</body>
+</html>
